@@ -23,11 +23,13 @@ export default function createRoutes(store) {
       getComponent(nextState, cb) {
         const importModules = Promise.all([
           import('containers/HomePage'),
+          import('containers/GalleryContainer/reducer'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([component]) => {
+        importModules.then(([component, galleryContainerReducer]) => {
+          injectReducer('galleryContainer', galleryContainerReducer.default);
           renderRoute(component);
         });
 

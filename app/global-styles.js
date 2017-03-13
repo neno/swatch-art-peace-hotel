@@ -27,4 +27,12 @@ injectGlobal`
     font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
+  
+  .ReactModal__Body--open {
+    overflow-y: hidden;
+  }
+  
+  .ReactModal__Body--open .ReactModal__Overlay {
+    z-index: 1000;
+  }
 `;
