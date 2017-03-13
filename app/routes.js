@@ -24,12 +24,14 @@ export default function createRoutes(store) {
         const importModules = Promise.all([
           import('containers/HomePage'),
           import('containers/GalleryContainer/reducer'),
+          import('containers/NavigationContainer/reducer'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([component, galleryContainerReducer]) => {
+        importModules.then(([component, galleryContainerReducer, navigationContainerReducer]) => {
           injectReducer('galleryContainer', galleryContainerReducer.default);
+          injectReducer('navigationContainer', navigationContainerReducer.default);
           renderRoute(component);
         });
 
