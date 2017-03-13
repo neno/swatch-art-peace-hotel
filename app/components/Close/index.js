@@ -9,9 +9,7 @@ import Button from './Button';
 
 
 const Close = ({ handleClose }) => (
-  <Button onClick={handleClose}>
-    <abbr title="close">x</abbr>
-  </Button>
+  <Button onClick={handleClose} title="Close">x</Button>
 );
 
 Close.propTypes = {
