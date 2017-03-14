@@ -28,6 +28,7 @@ const Gallery = ({ items, handleExpand, handleCollapse, itemWidth, itemHeight, e
             itemWidth={itemWidth}
             itemHeight={itemHeight}
             handleExpand={expandedId === item.id ? handleCollapse : handleExpand}
+            backgroundImage={'http://totallyhistory.com/wp-content/uploads/2011/11/Van_Gogh_-_Starry_Night.jpg'}
           />
         )
       ))

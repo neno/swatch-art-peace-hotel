@@ -8,12 +8,15 @@ import React, { PropTypes } from 'react';
 import Wrapper from './Wrapper';
 import Inner from './Inner';
 import Detail from './Detail';
+import Title from './Title';
+import OverlayWrapper from './OverlayWrapper';
+import ArtistInfo from './ArtistInfo';
 import Overlay from '../Overlay';
 import Image from '../Image';
 import PrevNext, { skins } from '../PrevNext';
 import Close from '../Close';
 
-function GalleryDetail({ item, handleCollapse, handleExpand, prevId, nextId }) {
+function GalleryDetail({ handleCollapse, handleExpand, prevId, nextId }) {
   const showPrev = (id) => {
     handleExpand(id);
   };
@@ -28,9 +31,19 @@ function GalleryDetail({ item, handleCollapse, handleExpand, prevId, nextId }) {
         <PrevNext skin={skins.prev} handleClick={() => showPrev(prevId)} />
         <Detail>
           <Close handleClose={handleCollapse} />
-          <Overlay trigger={<h3>{item.title}</h3>}>
-            <Image src={'http://placehold.it/1400X1400'} alt={'placeholder image'} />
-          </Overlay>
+          <OverlayWrapper>
+            <Overlay trigger={<Image src={'http://placehold.it/433X560'} alt={'placeholder image'} />}>
+              <Image src={'http://placehold.it/1400X1400'} alt={'placeholder image'} />
+            </Overlay>
+          </OverlayWrapper>
+          <ArtistInfo>
+            <Title>
+              Sebastian Wickeroth
+            </Title>
+            <Title>
+              Private Space
+            </Title>
+          </ArtistInfo>
         </Detail>
         <PrevNext skin={skins.next} handleClick={() => showNext(nextId)} />
       </Inner>
@@ -39,7 +52,7 @@ function GalleryDetail({ item, handleCollapse, handleExpand, prevId, nextId }) {
 }
 
 GalleryDetail.propTypes = {
-  item: PropTypes.object.isRequired,
+  // item: PropTypes.object.isRequired,
   handleCollapse: PropTypes.func.isRequired,
   handleExpand: PropTypes.func.isRequired,
   prevId: PropTypes.number,

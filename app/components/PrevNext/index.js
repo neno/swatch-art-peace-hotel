@@ -16,7 +16,7 @@ const getEnumValues = (obj) => Object.keys(obj).map((key) => obj[key]);
 const isPrev = (skin) => skin === skins.prev;
 
 const PrevNext = ({ skin, handleClick }) => (
-  <Button onClick={handleClick} title={isPrev(skin) ? 'Previous' : 'Next'}>
+  <Button skin={skin} onClick={handleClick} title={isPrev(skin) ? 'Previous' : 'Next'}>
     { isPrev(skin) ? '<' : '>' }
   </Button>
 );

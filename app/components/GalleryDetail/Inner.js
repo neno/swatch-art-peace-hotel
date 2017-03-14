@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const Inner = styled.div`
-  display: flex;
-  width: 1200px;
+  position: relative;
+  width: 1440px;
+  padding: 0 135px; 
   height: 100%;
   margin: 0 auto;
 `;

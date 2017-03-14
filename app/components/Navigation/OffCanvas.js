@@ -9,13 +9,14 @@ const getPositionLeft = (level) => (
 
 function OffCanvas({ children, isOpen, level }) {
   const Wrapper = styled.div`
-    position: absolute;
+    position: fixed;
     z-index: 9000;
     width: ${navWidth};
     height: 100%;
-    background: rgba(255,255,255, 0.8);
+    top: 80px;
+    background: rgba(197,197,197, 0.8);
     transform: translateX(${isOpen ? getPositionLeft(level) : -navWidth});
-    transition: transform .4s;
+    // transition: transform .4s;
   `;
 
   return (
