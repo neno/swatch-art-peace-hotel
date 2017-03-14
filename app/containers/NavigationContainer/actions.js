@@ -30,16 +30,16 @@ export function closeNav() {
   };
 }
 
-export function activateItem(id) {
+export function activateItem(item) {
   return {
     type: ACTIVATE_ITEM,
-    id,
+    item,
   };
 }
 
-export function activateSubitem(id) {
+export function activateSubitem(item) {
   return {
     type: ACTIVATE_SUBITEM,
-    id,
+    item,
   };
 }

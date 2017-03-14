@@ -5,6 +5,8 @@
  */
 
 import { fromJS } from 'immutable';
+import _ from 'lodash';
+
 import {
   GET_NAV_ITEMS,
   OPEN_NAV,
@@ -66,6 +68,7 @@ const initialState = fromJS({
       sort: 25,
     },
   ],
+  subNavItems: [],
   activeNavItem: null,
   activeSubNavItem: null,
   isOpenLevel1: false,
@@ -73,8 +76,6 @@ const initialState = fromJS({
 });
 
 function navigationContainerReducer(state = initialState, action) {
-  const hasChildren = () => false;
-
   switch (action.type) {
     case GET_NAV_ITEMS:
       return state;
@@ -82,17 +83,20 @@ function navigationContainerReducer(state = initialState, action) {
       return state.set('isOpenLevel1', true);
     case CLOSE_NAV:
       return state
+        .set('subNavItems', [])
         .set('isOpenLevel1', false)
         .set('isOpenLevel2', false)
         .set('activeNavItem', null)
         .set('activeSubNavItem', null);
     case ACTIVATE_ITEM:
       return state
-        .set('activeNavItem', action.key)
-        .set('isOpenLevel2', hasChildren(action.key))
+        .set('activeNavItem', action.item.id)
+        .set('subNavItems', _.isEmpty(action.item.children) ? [] : _.sortBy(action.item.children, 'sort'))
+        .set('isOpenLevel1', true)
+        .set('isOpenLevel2', !_.isEmpty(action.item.children))
         .set('activeSubNavItem', null);
     case ACTIVATE_SUBITEM:
-      return state.set('activeSubNavItem', action.key);
+      return state.set('activeSubNavItem', action.item.id);
     default:
       return state;
   }

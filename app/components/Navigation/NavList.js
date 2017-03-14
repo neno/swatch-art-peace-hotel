@@ -2,17 +2,20 @@ import React, { PropTypes } from 'react';
 import Ul from './Ul';
 import NavItem from './NavItem';
 
-const NavList = ({ navItems, handleRoute }) => (
+const NavList = ({ items, handleRoute, activeItem }) => (
   <Ul>
     {
-      navItems.map((item) => <NavItem key={item.id} item={item} handleRoute={handleRoute} />)
+      items.map((item) => (
+        <NavItem key={item.id} item={item} handleRoute={handleRoute} activeItem={activeItem} />
+      ))
     }
   </Ul>
 );
 
 NavList.propTypes = {
-  navItems: PropTypes.array.isRequired,
+  items: PropTypes.array.isRequired,
   handleRoute: PropTypes.func.isRequired,
+  activeItem: PropTypes.string,
 };
 
 export default NavList;
