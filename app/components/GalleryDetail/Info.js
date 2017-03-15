@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const ArtistInfo = styled.div`
+const Info = styled.div`
   flex: 1 0 auto;
 `;
 
-export default ArtistInfo;
+export default Info;

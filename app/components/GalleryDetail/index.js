@@ -10,13 +10,14 @@ import Inner from './Inner';
 import Detail from './Detail';
 import Title from './Title';
 import OverlayWrapper from './OverlayWrapper';
-import ArtistInfo from './ArtistInfo';
+import Info from './Info';
 import Overlay from '../Overlay';
 import Image from '../Image';
 import PrevNext, { skins } from '../PrevNext';
 import Close from '../Close';
+import ArtistInfo from '../ArtistInfo';
 
-function GalleryDetail({ handleCollapse, handleExpand, prevId, nextId }) {
+function GalleryDetail({ handleCollapse, handleExpand, prevId, nextId, artistInfo }) {
   const showPrev = (id) => {
     handleExpand(id);
   };
@@ -36,14 +37,15 @@ function GalleryDetail({ handleCollapse, handleExpand, prevId, nextId }) {
               <Image src={'http://placehold.it/1400X1400'} alt={'placeholder image'} />
             </Overlay>
           </OverlayWrapper>
-          <ArtistInfo>
+          <Info>
             <Title>
               Sebastian Wickeroth
             </Title>
+            <ArtistInfo {...artistInfo} />
             <Title>
               Private Space
             </Title>
-          </ArtistInfo>
+          </Info>
         </Detail>
         <PrevNext skin={skins.next} handleClick={() => showNext(nextId)} />
       </Inner>
@@ -57,6 +59,18 @@ GalleryDetail.propTypes = {
   handleExpand: PropTypes.func.isRequired,
   prevId: PropTypes.number,
   nextId: PropTypes.number,
+  artistInfo: PropTypes.object,
+};
+
+GalleryDetail.defaultProps = {
+  artistInfo: {
+    name: 'Sebastian Wickeroth',
+    imageSrc: 'http://placehold.it/120X120',
+    dob: '1977',
+    country: 'Germany',
+    dateFrom: '19/10/2015',
+    dateTo: '14/01/2016',
+  },
 };
 
 export default GalleryDetail;
