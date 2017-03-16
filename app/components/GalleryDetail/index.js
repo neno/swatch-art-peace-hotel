@@ -10,7 +10,7 @@ import _ from 'lodash';
 import Wrapper from './Wrapper';
 import Inner from './Inner';
 import Detail from './Detail';
-import Title from '../ArtistInfo/Title';
+import H2 from '../H2';
 import DetailImageWrapper from './DetailImageWrapper';
 import Info from './Info';
 import Overlay from '../Overlay';
@@ -58,9 +58,9 @@ function GalleryDetail({ item, handleCollapse, handleExpand, prevId, nextId }) {
             {
               !_.isEmpty(item.personalWorks) &&
               <div>
-                <Title>
+                <H2>
                   Private Space
-                </Title>
+                </H2>
                 { item.personalWorks.map((thumb, i) => <Thumb key={i} imageUrl={thumb.filename} />) }
               </div>
             }

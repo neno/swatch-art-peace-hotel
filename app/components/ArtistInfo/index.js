@@ -8,13 +8,13 @@ import React, { PropTypes } from 'react';
 import Wrapper from './Wrapper';
 import Thumb from './Thumb';
 import Image from '../Image';
-import Title from './Title';
+import H2 from '../H2';
 
 const ArtistInfo = ({ artist, title }) => (
   <Wrapper>
-    <Title>
+    <H2>
       {artist.name}
-    </Title>
+    </H2>
     <Thumb>
       <Image src={artist.profileImage} alt={artist.name} />
     </Thumb>

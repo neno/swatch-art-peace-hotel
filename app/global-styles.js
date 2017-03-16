@@ -1,7 +1,47 @@
 import { injectGlobal } from 'styled-components';
+import TenorSans from '../assets/fonts/Tenor_Sans/TenorSans-Regular.ttf';
+import ArchivoBlack from '../assets/fonts/Archivo_Black/ArchivoBlack-Regular.ttf';
+import WorkSansLight from '../assets/fonts/Work_Sans/WorkSans-Light.ttf';
+import WorkSansRegular from '../assets/fonts/Work_Sans/WorkSans-Regular.ttf';
+import WorkSansSemiBold from '../assets/fonts/Work_Sans/WorkSans-SemiBold.ttf';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
+  @font-face {
+    font-family: 'TenorSans';
+    src: url(${TenorSans}) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+   @font-face {
+    font-family: 'ArchivoBlack';
+    src: url(${ArchivoBlack}) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'WorkSans';
+    src: url(${WorkSansLight}) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+   @font-face {
+    font-family: 'WorkSans';
+    src: url(${WorkSansRegular}) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+   @font-face {
+    font-family: 'WorkSans';
+    src: url(${WorkSansSemiBold}) format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+
   html,
   body {
     height: 100%;
