@@ -11,7 +11,7 @@ export default {
       phoneOnly: 1,
       tabletPortraitUp: 2,
       tabletLandscapeUp: 4,
-      desktopUp: 5,
+      desktopUp: 4,
       bigDesktopUp: 6,
     },
     itemHeight: {
@@ -21,5 +21,7 @@ export default {
       desktopUp: 200,
       bigDesktopUp: 225,
     },
+    defaultImage: 'http://totallyhistory.com/wp-content/uploads/2011/11/Van_Gogh_-_Starry_Night.jpg',
   },
+  imgDir: 'img',
 };

@@ -8,30 +8,27 @@ import React, { PropTypes } from 'react';
 import Wrapper from './Wrapper';
 import Thumb from './Thumb';
 import Image from '../Image';
-// import styled from 'styled-components';
+import Title from './Title';
 
-
-const ArtistInfo = ({ name, imageSrc, dob, country, formOfArt, dateFrom, dateTo }) => (
+const ArtistInfo = ({ artist, title }) => (
   <Wrapper>
+    <Title>
+      {artist.name}
+    </Title>
     <Thumb>
-      <Image src={imageSrc} alt={name} />
+      <Image src={artist.profileImage} alt={artist.name} />
     </Thumb>
     <div>
-      {dob} | {country}
-      <p>{formOfArt}</p>
-      <p>{dateFrom}{dateTo}</p>
+      {artist.born} | {artist.nationality}
+      <p>{artist.inResidenceFrom}{artist.inResidenceTo}</p>
+      <p>{title}</p>
     </div>
   </Wrapper>
 );
 
 ArtistInfo.propTypes = {
-  name: PropTypes.string,
-  imageSrc: PropTypes.string,
-  dob: PropTypes.string,
-  country: PropTypes.string,
-  formOfArt: PropTypes.string,
-  dateFrom: PropTypes.string,
-  dateTo: PropTypes.string,
+  artist: PropTypes.object.isRequired,
+  title: PropTypes.string,
 };
 
 export default ArtistInfo;

@@ -7,7 +7,7 @@
 import { fromJS } from 'immutable';
 import _ from 'lodash';
 import {
-  GET_ARTWORKS,
+  GET_ARTWORKS_SUCCEEDED,
 } from './constants';
 
 const initialState = fromJS({});
@@ -18,8 +18,8 @@ _.forEach(_.range(53), (i) => (
 
 function galleryContainerReducer(state = initialState, action) {
   switch (action.type) {
-    case GET_ARTWORKS:
-      return state.set('artworks', artworks);
+    case GET_ARTWORKS_SUCCEEDED:
+      return state.set('artworks', action.artworks);
     default:
       return state;
   }

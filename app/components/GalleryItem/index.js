@@ -6,8 +6,16 @@
 
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
+import config from '../../config';
 
-function GalleryItem({ item, handleExpand, itemWidth, itemHeight, backgroundImage }) {
+const getImage = (item) => {
+  if (item.traceImage) {
+    return `img/${item.traceImage}`;
+  }
+  return config.Gallery.defaultImage;
+};
+
+function GalleryItem({ item, handleExpand, itemWidth, itemHeight }) {
   const Wrapper = styled.div`
     z-index: 5;
     position: relative;
@@ -27,7 +35,7 @@ function GalleryItem({ item, handleExpand, itemWidth, itemHeight, backgroundImag
     bottom: 0;
     left: -1px;
     border-left: 1px solid #5F5F5F;
-    background: url(${backgroundImage}) center;
+    background: url(${getImage(item)}) center;
     background-size: cover;
   `;
 
@@ -43,7 +51,6 @@ GalleryItem.propTypes = {
   handleExpand: PropTypes.func.isRequired,
   itemWidth: PropTypes.string.isRequired,
   itemHeight: PropTypes.string.isRequired,
-  backgroundImage: PropTypes.string.isRequired,
 };
 
 export default GalleryItem;

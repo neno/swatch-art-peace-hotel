@@ -15,7 +15,8 @@ const Gallery = ({ items, handleExpand, handleCollapse, itemWidth, itemHeight, e
       items.map((item, idx) => (
         item.expanded ? (
           <GalleryDetail
-            key={idx} item={item}
+            key={idx}
+            item={item}
             handleCollapse={handleCollapse}
             handleExpand={handleExpand}
             prevId={prevId}
@@ -28,7 +29,6 @@ const Gallery = ({ items, handleExpand, handleCollapse, itemWidth, itemHeight, e
             itemWidth={itemWidth}
             itemHeight={itemHeight}
             handleExpand={expandedId === item.id ? handleCollapse : handleExpand}
-            backgroundImage={'http://totallyhistory.com/wp-content/uploads/2011/11/Van_Gogh_-_Starry_Night.jpg'}
           />
         )
       ))

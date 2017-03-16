@@ -24,13 +24,15 @@ export default function createRoutes(store) {
         const importModules = Promise.all([
           import('containers/HomePage'),
           import('containers/GalleryContainer/reducer'),
+          import('containers/GalleryContainer/sagas'),
           import('containers/NavigationContainer/reducer'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([component, galleryContainerReducer, navigationContainerReducer]) => {
+        importModules.then(([component, galleryContainerReducer, galleryContainerSagas, navigationContainerReducer]) => {
           injectReducer('galleryContainer', galleryContainerReducer.default);
+          injectSagas(galleryContainerSagas.default);
           injectReducer('navigationContainer', navigationContainerReducer.default);
           renderRoute(component);
         });
