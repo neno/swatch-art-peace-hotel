@@ -12,8 +12,8 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
-import GalleryContainer from '../GalleryContainer';
-import NavigationContainer from '../NavigationContainer';
+import GalleryContainer from '../../containers/GalleryContainer';
+import NavigationContainer from '../../containers/NavigationContainer';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {

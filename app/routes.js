@@ -22,7 +22,51 @@ export default function createRoutes(store) {
       name: 'home',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('containers/HomePage'),
+          import('pages/HomePage'),
+          import('containers/GalleryContainer/reducer'),
+          import('containers/GalleryContainer/sagas'),
+          import('containers/NavigationContainer/reducer'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component, galleryContainerReducer, galleryContainerSagas, navigationContainerReducer]) => {
+          injectReducer('galleryContainer', galleryContainerReducer.default);
+          injectSagas(galleryContainerSagas.default);
+          injectReducer('navigationContainer', navigationContainerReducer.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: '/virtual-museum',
+      name: 'virtualMuseumPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('pages/VirtualMuseumPage'),
+          import('containers/GalleryContainer/reducer'),
+          import('containers/GalleryContainer/sagas'),
+          import('containers/NavigationContainer/reducer'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component, galleryContainerReducer, galleryContainerSagas, navigationContainerReducer]) => {
+          injectReducer('galleryContainer', galleryContainerReducer.default);
+          injectSagas(galleryContainerSagas.default);
+          injectReducer('navigationContainer', navigationContainerReducer.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: '/artists-in-residence',
+      name: 'artistsInResidencePage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('pages/artistsInResidencePage'),
           import('containers/GalleryContainer/reducer'),
           import('containers/GalleryContainer/sagas'),
           import('containers/NavigationContainer/reducer'),
