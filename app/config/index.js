@@ -11,6 +11,16 @@ export default {
     VirtualMuseum: {
       title: 'Virtual Museum',
       description: '',
+      children: {
+        Discover: {
+          title: 'Discover',
+          description: '',
+        },
+        MeetArtists: {
+          title: 'Meet Artists',
+          description: '',
+        },
+      },
     },
     ArtistsInResidence: {
       title: 'Artists In Residence',

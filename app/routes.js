@@ -39,51 +39,50 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
-    }, {
-      path: '/virtual-museum',
-      name: 'virtualMuseumPage',
+    },
+    {
+      path: '/virtual-museum-meet-artists',
+      name: 'meetArtistsPage',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('pages/VirtualMuseumPage'),
+          import('pages/VirtualMuseumPage/MeetArtistsPage'),
           import('containers/GalleryContainer/reducer'),
           import('containers/GalleryContainer/sagas'),
-          import('containers/NavigationContainer/reducer'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([component, galleryContainerReducer, galleryContainerSagas, navigationContainerReducer]) => {
+        importModules.then(([component, galleryContainerReducer, galleryContainerSagas]) => {
           injectReducer('galleryContainer', galleryContainerReducer.default);
           injectSagas(galleryContainerSagas.default);
-          injectReducer('navigationContainer', navigationContainerReducer.default);
           renderRoute(component);
         });
 
         importModules.catch(errorLoading);
       },
-    }, {
-      path: '/artists-in-residence',
-      name: 'artistsInResidencePage',
+    },
+    {
+      path: '/virtual-museum-discover',
+      name: 'discoverPage',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('pages/artistsInResidencePage'),
+          import('pages/VirtualMuseumPage/DiscoverPage'),
           import('containers/GalleryContainer/reducer'),
           import('containers/GalleryContainer/sagas'),
-          import('containers/NavigationContainer/reducer'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([component, galleryContainerReducer, galleryContainerSagas, navigationContainerReducer]) => {
+        importModules.then(([component, galleryContainerReducer, galleryContainerSagas]) => {
           injectReducer('galleryContainer', galleryContainerReducer.default);
           injectSagas(galleryContainerSagas.default);
-          injectReducer('navigationContainer', navigationContainerReducer.default);
           renderRoute(component);
         });
 
         importModules.catch(errorLoading);
       },
-    }, {
+    },
+    {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
