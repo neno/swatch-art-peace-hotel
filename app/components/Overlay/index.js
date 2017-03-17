@@ -6,6 +6,7 @@
 
 import React, { PropTypes } from 'react';
 import Modal from 'react-modal';
+import Button from './Button';
 
 
 class Overlay extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -34,9 +35,9 @@ class Overlay extends React.Component { // eslint-disable-line react/prefer-stat
     const { trigger, children } = this.props;
     return (
       <div>
-        <button onClick={this.openModal}>
+        <Button onClick={this.openModal}>
           { trigger }
-        </button>
+        </Button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
