@@ -123,6 +123,7 @@ export class GalleryContainer extends React.PureComponent { // eslint-disable-li
           items={items}
           handleExpand={this.expandDetail}
           handleCollapse={this.reset}
+          itemsPerRow={itemsPerRow}
           itemWidth={this.getItemWidth(itemsPerRow)}
           itemHeight={`${itemHeight}px`}
           expandedId={expandedId}

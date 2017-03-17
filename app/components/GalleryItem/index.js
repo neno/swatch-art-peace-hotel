@@ -15,17 +15,22 @@ const getImage = (item) => {
   return config.Gallery.defaultImage;
 };
 
-function GalleryItem({ item, handleExpand, itemWidth, itemHeight }) {
+function GalleryItem({ idx, item, handleExpand, itemWidth, itemHeight, itemsPerRow }) {
   const Wrapper = styled.div`
     z-index: 5;
     position: relative;
     width: ${itemWidth};
     height: ${itemHeight};
     margin: 0;
+    dhYScL
     border-top: 10px solid #999;
-    border-bottom: 10px solid #999;
+    ${idx >= itemsPerRow ? 'border-top: 20px solid #999;' : ''};
     background: #818181;
     cursor: pointer;
+    
+    &:nth-child(itemsPerRow) {
+      border-top: none;
+    }
   `;
 
   const Inner = styled.div`
@@ -51,6 +56,8 @@ GalleryItem.propTypes = {
   handleExpand: PropTypes.func.isRequired,
   itemWidth: PropTypes.string.isRequired,
   itemHeight: PropTypes.string.isRequired,
+  itemsPerRow: PropTypes.number.isRequired,
+  idx: PropTypes.number.isRequired,
 };
 
 export default GalleryItem;
