@@ -22,7 +22,7 @@ export default function createRoutes(store) {
       name: 'home',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('containers/HomePage'),
+          import('pages/HomePage'),
           import('containers/GalleryContainer/reducer'),
           import('containers/GalleryContainer/sagas'),
           import('containers/NavigationContainer/reducer'),
@@ -39,7 +39,50 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
-    }, {
+    },
+    {
+      path: '/virtual-museum-meet-artists',
+      name: 'meetArtistsPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('pages/VirtualMuseumPage/MeetArtistsPage'),
+          import('containers/GalleryContainer/reducer'),
+          import('containers/GalleryContainer/sagas'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component, galleryContainerReducer, galleryContainerSagas]) => {
+          injectReducer('galleryContainer', galleryContainerReducer.default);
+          injectSagas(galleryContainerSagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    },
+    {
+      path: '/virtual-museum-discover',
+      name: 'discoverPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('pages/VirtualMuseumPage/DiscoverPage'),
+          import('containers/GalleryContainer/reducer'),
+          import('containers/GalleryContainer/sagas'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component, galleryContainerReducer, galleryContainerSagas]) => {
+          injectReducer('galleryContainer', galleryContainerReducer.default);
+          injectSagas(galleryContainerSagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    },
+    {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

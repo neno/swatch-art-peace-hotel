@@ -19,7 +19,12 @@ export class GalleryContainer extends React.PureComponent { // eslint-disable-li
 
   static propTypes = {
     getArtworks: PropTypes.func.isRequired,
+    context: PropTypes.string.isRequired,
     artworks: PropTypes.array,
+  };
+
+  static defaultProps = {
+    context: 'artwork',
   };
 
   constructor(props) {
@@ -34,7 +39,9 @@ export class GalleryContainer extends React.PureComponent { // eslint-disable-li
   }
 
   componentDidMount() {
-    this.props.getArtworks();
+    if (_.isEmpty(this.props.artworks)) {
+      this.props.getArtworks();
+    }
     this.setGrid();
     window.addEventListener('resize', _.throttle(this.setGrid, 100));
   }
@@ -112,7 +119,7 @@ export class GalleryContainer extends React.PureComponent { // eslint-disable-li
   };
 
   render() {
-    const { artworks } = this.props;
+    const { artworks, context } = this.props;
     const { itemsPerRow, itemHeight, expandedId, prevId, nextId } = this.state;
     const items = this.getItems(artworks, expandedId);
 
@@ -121,6 +128,7 @@ export class GalleryContainer extends React.PureComponent { // eslint-disable-li
         <div></div> :
         <Gallery
           items={items}
+          context={context}
           handleExpand={this.expandDetail}
           handleCollapse={this.reset}
           itemsPerRow={itemsPerRow}

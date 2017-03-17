@@ -1,9 +1,9 @@
 // import React from 'react';
 // import { shallow } from 'enzyme';
 
-// import Navigation from '../index';
+// import PrevNext from '../index';
 
-describe('<Navigation />', () => {
+describe('<PageTitle />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(true);
   });

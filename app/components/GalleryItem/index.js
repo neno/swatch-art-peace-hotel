@@ -8,29 +8,24 @@ import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 import config from '../../config';
 
-const getImage = (item) => {
-  if (item.traceImage) {
-    return `img/${item.traceImage}`;
+const getImage = (thumb) => {
+  if (thumb) {
+    return `img/${thumb}`;
   }
   return config.Gallery.defaultImage;
 };
 
-function GalleryItem({ idx, item, handleExpand, itemWidth, itemHeight, itemsPerRow }) {
+function GalleryItem({ item, thumb, handleExpand, itemWidth, itemHeight }) {
   const Wrapper = styled.div`
     z-index: 5;
     position: relative;
     width: ${itemWidth};
     height: ${itemHeight};
     margin: 0;
-    dhYScL
     border-top: 10px solid #999;
-    ${idx >= itemsPerRow ? 'border-top: 20px solid #999;' : ''};
+    border-bottom: 10px solid #999;
     background: #818181;
     cursor: pointer;
-    
-    &:nth-child(itemsPerRow) {
-      border-top: none;
-    }
   `;
 
   const Inner = styled.div`
@@ -40,7 +35,7 @@ function GalleryItem({ idx, item, handleExpand, itemWidth, itemHeight, itemsPerR
     bottom: 0;
     left: -1px;
     border-left: 1px solid #5F5F5F;
-    background: url(${getImage(item)}) center;
+    background: url(${getImage(thumb)}) center;
     background-size: cover;
   `;
 
@@ -53,11 +48,10 @@ function GalleryItem({ idx, item, handleExpand, itemWidth, itemHeight, itemsPerR
 
 GalleryItem.propTypes = {
   item: PropTypes.object.isRequired,
+  thumb: PropTypes.string,
   handleExpand: PropTypes.func.isRequired,
   itemWidth: PropTypes.string.isRequired,
   itemHeight: PropTypes.string.isRequired,
-  itemsPerRow: PropTypes.number.isRequired,
-  idx: PropTypes.number.isRequired,
 };
 
 export default GalleryItem;

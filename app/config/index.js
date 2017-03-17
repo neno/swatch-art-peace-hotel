@@ -1,10 +1,31 @@
 export default {
+  appName: 'The Swatch Art Peace Hotel',
   breakpoints: {
     phoneOnly: 'phoneOnly',
     tabletPortraitUp: 'tabletPortraitUp',
     tabletLandscapeUp: 'tabletLandscapeUp',
     desktopUp: 'desktopUp',
     bigDesktopUp: 'bigDesktopUp',
+  },
+  pages: {
+    VirtualMuseum: {
+      title: 'Virtual Museum',
+      description: '',
+      children: {
+        Discover: {
+          title: 'Discover',
+          description: '',
+        },
+        MeetArtists: {
+          title: 'Meet Artists',
+          description: '',
+        },
+      },
+    },
+    ArtistsInResidence: {
+      title: 'Artists In Residence',
+      description: '',
+    },
   },
   Gallery: {
     itemsPerRow: {
