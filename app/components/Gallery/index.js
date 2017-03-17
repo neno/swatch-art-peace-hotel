@@ -9,7 +9,7 @@ import GalleryItem from '../GalleryItem';
 import GalleryDetail from '../GalleryDetail';
 import Wrapper from './Wrapper';
 
-const Gallery = ({ items, context, handleExpand, handleCollapse, itemWidth, itemHeight, expandedId, prevId, nextId }) => (
+const Gallery = ({ itemsPerRow, items, context, handleExpand, handleCollapse, itemWidth, itemHeight, expandedId, prevId, nextId }) => (
   <Wrapper>
     {
       items.map((item, idx) => (
@@ -25,6 +25,8 @@ const Gallery = ({ items, context, handleExpand, handleCollapse, itemWidth, item
         ) : (
           <GalleryItem
             key={idx}
+            idx={idx}
+            itemsPerRow={itemsPerRow}
             item={item}
             thumb={item.defaultImage[context]}
             itemWidth={itemWidth}
@@ -44,6 +46,7 @@ Gallery.propTypes = {
   handleCollapse: PropTypes.func.isRequired,
   itemWidth: PropTypes.string.isRequired,
   itemHeight: PropTypes.string.isRequired,
+  itemsPerRow: PropTypes.number.isRequired,
   expandedId: PropTypes.number,
   prevId: PropTypes.number,
   nextId: PropTypes.number,

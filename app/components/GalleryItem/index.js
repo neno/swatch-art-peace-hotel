@@ -15,15 +15,14 @@ const getImage = (thumb) => {
   return config.Gallery.defaultImage;
 };
 
-function GalleryItem({ item, thumb, handleExpand, itemWidth, itemHeight }) {
+function GalleryItem({ idx, itemsPerRow, item, thumb, handleExpand, itemWidth, itemHeight }) {
   const Wrapper = styled.div`
     z-index: 5;
     position: relative;
     width: ${itemWidth};
     height: ${itemHeight};
     margin: 0;
-    border-top: 10px solid #999;
-    border-bottom: 10px solid #999;
+    ${idx >= itemsPerRow ? 'border-top: 20px solid #999;' : ''}
     background: #818181;
     cursor: pointer;
   `;
@@ -52,6 +51,8 @@ GalleryItem.propTypes = {
   handleExpand: PropTypes.func.isRequired,
   itemWidth: PropTypes.string.isRequired,
   itemHeight: PropTypes.string.isRequired,
+  idx: PropTypes.number.isRequired,
+  itemsPerRow: PropTypes.number.isRequired,
 };
 
 export default GalleryItem;
