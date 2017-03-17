@@ -4,10 +4,10 @@ const DetailImageWrapper = styled.div`
   flex: 0 0 auto;
   max-width: 433px;
   margin-right: 130px;
-  width: 100%; // remove later
+  text-align: center;
   
   img {
-    max-height: 640px;
+    max-height: 80vh;
   }
 `;
 

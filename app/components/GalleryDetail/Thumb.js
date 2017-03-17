@@ -9,27 +9,25 @@ import styled from 'styled-components';
 import config from '../../config';
 
 
-function Thumb({ imageUrl, children }) {
-  const Wrapper = styled.div`
+function Thumb({ imageUrl, setImage }) {
+  const Button = styled.button`
     display: inline-block;
     width: 62px;
     height: 62px;
     border: 1px solid black;
-    margin: 1rem 1rem 1rem 0;
+    margin: 0 1rem 1rem 0;
     background: url(${config.imgDir}/${imageUrl}) center;
     background-size: cover;
   `;
 
   return (
-    <Wrapper>
-      {children}
-    </Wrapper>
+    <Button onClick={() => setImage(imageUrl)} />
   );
 }
 
 Thumb.propTypes = {
   imageUrl: PropTypes.string.isRequired,
-  children: PropTypes.any,
+  setImage: PropTypes.func.isRequired,
 };
 
 export default Thumb;

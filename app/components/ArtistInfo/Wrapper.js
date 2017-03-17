@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
   overflow: hidden;
+  margin-bottom: 3rem;
 `;
 
 export default Wrapper;

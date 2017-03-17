@@ -55,6 +55,10 @@ injectGlobal`
     line-height: 1.28;
     color: #000000;
   }
+  
+  button {
+    cursor: pointer;
+  }
 
   // body.fontLoaded {
   //   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -83,5 +87,6 @@ injectGlobal`
   
   .ReactModal__Body--open .ReactModal__Overlay {
     z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9) !important;
   }
 `;
