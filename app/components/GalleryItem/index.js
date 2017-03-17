@@ -8,14 +8,14 @@ import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 import config from '../../config';
 
-const getImage = (item) => {
-  if (item.traceImage) {
-    return `img/${item.traceImage}`;
+const getImage = (thumb) => {
+  if (thumb) {
+    return `img/${thumb}`;
   }
   return config.Gallery.defaultImage;
 };
 
-function GalleryItem({ item, handleExpand, itemWidth, itemHeight }) {
+function GalleryItem({ item, thumb, handleExpand, itemWidth, itemHeight }) {
   const Wrapper = styled.div`
     z-index: 5;
     position: relative;
@@ -35,7 +35,7 @@ function GalleryItem({ item, handleExpand, itemWidth, itemHeight }) {
     bottom: 0;
     left: -1px;
     border-left: 1px solid #5F5F5F;
-    background: url(${getImage(item)}) center;
+    background: url(${getImage(thumb)}) center;
     background-size: cover;
   `;
 
@@ -48,6 +48,7 @@ function GalleryItem({ item, handleExpand, itemWidth, itemHeight }) {
 
 GalleryItem.propTypes = {
   item: PropTypes.object.isRequired,
+  thumb: PropTypes.string,
   handleExpand: PropTypes.func.isRequired,
   itemWidth: PropTypes.string.isRequired,
   itemHeight: PropTypes.string.isRequired,
