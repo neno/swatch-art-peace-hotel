@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const H2 = styled.h2`
+  margin: 0;
+  margin-bottom: 30px;
   font-family: 'TenorSans', sans-serif;
   font-size: 30px;
   font-weight: normal;

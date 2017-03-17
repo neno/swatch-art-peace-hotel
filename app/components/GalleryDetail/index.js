@@ -32,9 +32,9 @@ function GalleryDetail({ item, handleCollapse, handleExpand, prevId, nextId }) {
   return (
     <Wrapper>
       <Inner>
+        <Close handleClose={handleCollapse} />
         <PrevNext skin={skins.prev} handleClick={() => showPrev(prevId)} />
         <Detail>
-          <Close handleClose={handleCollapse} />
           <DetailImageWrapper>
             <Overlay trigger={<Image src={item.traceImage} alt={item.title} />}>
               <Image src={item.traceImage} alt={item.title} />

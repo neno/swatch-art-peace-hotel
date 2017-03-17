@@ -12,13 +12,15 @@ const nextPosition = css`
 const Button = styled.button`
   z-index: 100;
   position: absolute;
-  top: 0;
+  bottom: 0;
   ${(props) => props.skin === 'next' ? nextPosition : prevPosition}
   width: 50px;
-  height: 100%;
+  padding: 0;
+  outline: 0;
   font-size: 50px;
   line-height: 1;
   color: #816444;
+  appearance: none;
 `;
 
 export default Button;
