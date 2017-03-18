@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.header`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  // justify-content: center;
+  // align-items: center;
   position: fixed;
   top: 0;
   left: 0;

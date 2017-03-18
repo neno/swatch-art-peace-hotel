@@ -5,21 +5,18 @@
 */
 
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
+import { Link } from 'react-router';
+import logoImage from '../../img/logo.svg';
 
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
+const StyledLink = styled(Link)`
+`;
 
-function Logo() {
-  return (
-    <div>
-      <FormattedMessage {...messages.header} />
-    </div>
-  );
-}
-
-Logo.propTypes = {
-
-};
+const Logo = () => (
+  <StyledLink to="/">
+    <img src={logoImage} alt={'The Swatch Art Peace Hotel'} />
+  </StyledLink>
+);
 
 export default Logo;
+
