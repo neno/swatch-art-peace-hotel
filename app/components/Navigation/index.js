@@ -6,6 +6,7 @@
 
 import React, { PropTypes } from 'react';
 import _ from 'lodash';
+import Nav from './Nav';
 import OffCanvas from './OffCanvas';
 import NavList from './NavList';
 
@@ -21,7 +22,7 @@ const Navigation = ({
   handleOpen,
   handleClose,
 }) => (
-  <nav>
+  <Nav>
     {
       isOpenLevel1 &&
       <OffCanvas className="navLevel1" isOpen={isOpenLevel1} level={1}>
@@ -37,7 +38,7 @@ const Navigation = ({
     }
 
     <button onClick={handleOpen}>Open Navigation</button>
-  </nav>
+  </Nav>
 );
 
 Navigation.propTypes = {

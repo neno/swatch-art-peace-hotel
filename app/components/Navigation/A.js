@@ -9,10 +9,6 @@ const A = styled.a`
   color: #000;
   text-decoration: inherit;
   
-  &:first-letter {
-    text-transform: uppercase;
-  }
-  
   &:active,
   &:hover {
     color: #ac7e49;

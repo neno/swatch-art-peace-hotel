@@ -10,8 +10,6 @@ const getPositionLeft = (level) => (
 function OffCanvas({ children, isOpen, level }) {
   const Wrapper = styled.div`
     position: fixed;
-    z-index: 9000;
-    top: 80px;
     width: ${navWidth};
     height: 100%;
     padding: 50px 0;
