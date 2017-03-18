@@ -17,6 +17,7 @@ import Thumb from './Thumb';
 import OverlayImage from './OverlayImage';
 import PrivateSpaceWrapper from './PrivateSpaceWrapper';
 import ThumbsWrapper from './ThumbsWrapper';
+import Description from './Description';
 import Overlay from '../Overlay';
 import Image from '../Image';
 import PrevNext, { skins } from '../PrevNext';
@@ -85,7 +86,10 @@ export class GalleryDetail extends PureComponent {
               }
               {
                 !!item.description &&
-                <div dangerouslySetInnerHTML={{ __html: item.description }} />
+
+                <Description>
+                  {<div dangerouslySetInnerHTML={{ __html: item.description }} />}
+                </Description>
               }
               {
                 !_.isEmpty(item.personalWorks) &&

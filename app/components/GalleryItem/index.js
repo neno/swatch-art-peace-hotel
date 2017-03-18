@@ -6,11 +6,12 @@
 
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
+import Image from '../Image';
 import config from '../../config';
 
 const getImage = (thumb) => {
   if (thumb) {
-    return `img/${thumb}`;
+    return `${thumb}`;
   }
   return config.Gallery.defaultImage;
 };
@@ -28,6 +29,8 @@ function GalleryItem({ idx, itemsPerRow, artworksLength, item, thumb, handleExpa
     ${idx <= lastRowStart ? 'border-bottom: 10px solid #999;' : ''}
     background: #818181;
     cursor: pointer;
+    
+
   `;
 
   const Inner = styled.div`
@@ -39,11 +42,19 @@ function GalleryItem({ idx, itemsPerRow, artworksLength, item, thumb, handleExpa
     border-left: 1px solid #5F5F5F;
     background: url(${getImage(thumb)}) center;
     background-size: cover;
+    
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
   `;
 
   return (
     <Wrapper onClick={() => handleExpand(item.id)}>
-      <Inner />
+      <Inner>
+        <Image src={getImage(thumb)} alt={'thumb'} />
+      </Inner>
     </Wrapper>
   );
 }
