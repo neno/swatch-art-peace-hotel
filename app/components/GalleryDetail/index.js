@@ -13,13 +13,15 @@ import Detail from './Detail';
 import H2 from '../H2';
 import DetailImageWrapper from './DetailImageWrapper';
 import Info from './Info';
+import Thumb from './Thumb';
+import OverlayImage from './OverlayImage';
+import PrivateSpaceWrapper from './PrivateSpaceWrapper';
+import ThumbsWrapper from './ThumbsWrapper';
 import Overlay from '../Overlay';
 import Image from '../Image';
 import PrevNext, { skins } from '../PrevNext';
 import Close from '../Close';
 import ArtistInfo from '../ArtistInfo';
-import Thumb from './Thumb';
-import OverlayImage from './OverlayImage';
 
 export class GalleryDetail extends PureComponent {
 
@@ -71,7 +73,7 @@ export class GalleryDetail extends PureComponent {
               />
               {
                 !_.isEmpty(item.traceImages) &&
-                <div>
+                <ThumbsWrapper>
                   { item.traceImages.map((thumb, i) => (
                     <Thumb
                       key={i}
@@ -79,7 +81,7 @@ export class GalleryDetail extends PureComponent {
                       imageUrl={thumb.filename}
                     />
                   ))}
-                </div>
+                </ThumbsWrapper>
               }
               {
                 !!item.description &&
@@ -87,11 +89,11 @@ export class GalleryDetail extends PureComponent {
               }
               {
                 !_.isEmpty(item.personalWorks) &&
-                <div>
+                <PrivateSpaceWrapper>
                   <H2>
                     Private Space
                   </H2>
-                  <div>
+                  <ThumbsWrapper>
                     { item.personalWorks.map((work, i) => (
                       <Thumb
                         key={i}
@@ -99,8 +101,8 @@ export class GalleryDetail extends PureComponent {
                         imageUrl={work.filename}
                       />
                     ))}
-                  </div>
-                </div>
+                  </ThumbsWrapper>
+                </PrivateSpaceWrapper>
               }
             </Info>
           </Detail>

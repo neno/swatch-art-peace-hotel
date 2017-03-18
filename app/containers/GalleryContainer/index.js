@@ -127,6 +127,7 @@ export class GalleryContainer extends React.PureComponent { // eslint-disable-li
       _.isEmpty(items) ?
         <div></div> :
         <Gallery
+          artworksLength={artworks.length}
           items={items}
           context={context}
           handleExpand={this.expandDetail}

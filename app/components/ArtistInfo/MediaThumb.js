@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const MediaThumb = styled.div`
-  max-width: 120px;
+  max-width: 102px;
   margin-right: 20px;
 `;
 

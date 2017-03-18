@@ -15,7 +15,7 @@ function Thumb({ imageUrl, setImage }) {
     width: 62px;
     height: 62px;
     border: 1px solid black;
-    margin: 0 1rem 1rem 0;
+    margin: 16px 16px 0 0;
     background: url(${config.imgDir}/${imageUrl}) center;
     background-size: cover;
   `;

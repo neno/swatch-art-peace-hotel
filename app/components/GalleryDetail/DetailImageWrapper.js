@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 const DetailImageWrapper = styled.div`
   flex: 0 0 auto;
-  max-width: 433px;
-  margin-right: 130px;
+  width: 37.1036%;
   text-align: center;
+  margin-right: 130px;
   
   img {
     max-height: 80vh;

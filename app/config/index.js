@@ -40,7 +40,7 @@ export default {
       tabletPortraitUp: 180,
       tabletLandscapeUp: 186,
       desktopUp: 200,
-      bigDesktopUp: 225,
+      bigDesktopUp: 210,
     },
     defaultImage: 'http://totallyhistory.com/wp-content/uploads/2011/11/Van_Gogh_-_Starry_Night.jpg',
   },

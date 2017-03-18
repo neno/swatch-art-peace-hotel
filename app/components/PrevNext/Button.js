@@ -17,9 +17,9 @@ const Button = styled.button`
   width: 50px;
   padding: 0;
   outline: 0;
-  font-size: 50px;
-  line-height: 1;
-  color: #816444;
+  // font-size: 50px;
+  // line-height: 1;
+  // color: #816444;
   appearance: none;
 `;
 

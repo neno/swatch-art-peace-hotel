@@ -6,11 +6,11 @@ const Wrapper = styled.div`
   // height: 400px;
   flex: 1 100%;
   padding: 40px;
-  margin-top: -10px;
-  margin-bottom: -10px;
+  // margin-top: -10px;
+  // margin-bottom: -10px;
   background: white;
-  border-top: 20px solid white;
-  border-bottom: 20px solid white;
+  border-top: 10px solid #999;
+  border-bottom: 10px solid #999;
 `;
 
 export default Wrapper;
