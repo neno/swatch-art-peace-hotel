@@ -5,17 +5,19 @@
 */
 
 import React, { PropTypes } from 'react';
-import H4 from '../H4';
-import H2 from '../H2';
+import Date from './Date';
+import Title from './Title';
+import Wrapper from './Wrapper';
+import Summary from './Summary';
 // import styled from 'styled-components';
 
 
 const NewsArticle = ({ article }) => (
-  <article>
-    <H4>{article.date}</H4>
-    <H2>{article.title}</H2>
-    <p>{article.text}</p>
-  </article>
+  <Wrapper>
+    <Date>{article.date}</Date>
+    <Title>{article.title}</Title>
+    <Summary>{article.text}</Summary>
+  </Wrapper>
 );
 
 NewsArticle.propTypes = {

@@ -18,6 +18,7 @@ function Features({ features }) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    dots: true,
   };
 
   const slides = features.map((feature, i) => (

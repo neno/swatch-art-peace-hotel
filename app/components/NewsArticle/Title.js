@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const H2 = styled.h2`
-  margin: 0 0 30px;
+const Title = styled.h3`
+  margin: 0 0 5px;
   font-family: 'TenorSans', sans-serif;
   font-size: 30px;
   font-weight: normal;
@@ -10,4 +10,4 @@ const H2 = styled.h2`
   color: #000000;
 `;
 
-export default H2;
+export default Title;

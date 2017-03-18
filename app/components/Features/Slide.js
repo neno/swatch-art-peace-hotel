@@ -9,12 +9,13 @@ const Article = styled.article`
   
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: center;
   
   & > div {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
+    padding-bottom: 45px;
   }
 `;
 

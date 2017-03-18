@@ -4,6 +4,7 @@ import ArchivoBlack from '../assets/fonts/Archivo_Black/ArchivoBlack-Regular.ttf
 import WorkSansLight from '../assets/fonts/Work_Sans/WorkSans-Light.ttf';
 import WorkSansRegular from '../assets/fonts/Work_Sans/WorkSans-Regular.ttf';
 import WorkSansSemiBold from '../assets/fonts/Work_Sans/WorkSans-SemiBold.ttf';
+import OpenSans from '../assets/fonts/Open_Sans/OpenSans-Regular.ttf';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
@@ -41,6 +42,13 @@ injectGlobal`
     font-weight: 600;
     font-style: normal;
   }
+  
+  @font-face {
+    font-family: 'OpenSans';
+    src: url(${OpenSans}) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
 
   html,
   body {
@@ -69,6 +77,14 @@ injectGlobal`
     min-height: 100%;
     min-width: 100%;
   }
+  
+  p {
+    font-family: 'WorkSans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.28;
+    color: #000000;
+   }
 
   // p,
   // label {
