@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const Media = styled.div`
-  display: flex;
-  align-items: flex-start;
+  overflow: hidden;
 `;
 
 export default Media;

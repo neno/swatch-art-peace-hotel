@@ -14,7 +14,6 @@ import PageTitle from '../../components/PageTitle';
 import FeaturesContainer from '../../containers/FeaturesContainer';
 import NewsContainer from '../../containers/NewsContainer';
 import FeaturedNews from '../../components/FeaturedNews';
-import NavigationContainer from '../../containers/NavigationContainer';
 import config from '../../config';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -28,7 +27,6 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
         <NewsContainer>
           <FeaturedNews />
         </NewsContainer>
-        <NavigationContainer />
       </div>
     );
   }

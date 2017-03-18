@@ -11,7 +11,7 @@ import MediaThumb from './MediaThumb';
 import MediaBody from './MediaBody';
 import Image from '../Image';
 import H2 from '../H2';
-import H4 from '../H4';
+import StyledH4 from './StyledH4';
 
 const ArtistInfo = ({ artist, title }) => (
   <Wrapper>
@@ -27,7 +27,7 @@ const ArtistInfo = ({ artist, title }) => (
           {artist.born} | {artist.nationality}<br />
           {artist.inResidenceFrom}{artist.inResidenceTo}
         </p>
-        <H4>{title}</H4>
+        <StyledH4>{title}</StyledH4>
       </MediaBody>
     </Media>
   </Wrapper>

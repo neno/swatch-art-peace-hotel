@@ -1,25 +1,13 @@
-import styled, { css } from 'styled-components';
-
-const prevPosition = css`
-  left: 0;
-`;
-
-const nextPosition = css`
-  right: 0;
-`;
-
+import styled from 'styled-components';
 
 const Button = styled.button`
   z-index: 100;
   position: absolute;
   bottom: 0;
-  ${(props) => props.skin === 'next' ? nextPosition : prevPosition}
+  ${(props) => props.skin === 'next' ? 'right' : 'left'}: 0;
   width: 50px;
   padding: 0;
   outline: 0;
-  // font-size: 50px;
-  // line-height: 1;
-  // color: #816444;
   appearance: none;
 `;
 

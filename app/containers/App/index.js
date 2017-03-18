@@ -14,6 +14,7 @@
 import React from 'react';
 import Page from '../../components/Page';
 import Header from '../../components/Header';
+import NavigationContainer from '../../containers/NavigationContainer';
 
 export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -25,6 +26,7 @@ export default class App extends React.PureComponent { // eslint-disable-line re
     return (
       <Page>
         <Header />
+        <NavigationContainer />
         {React.Children.toArray(this.props.children)}
       </Page>
     );
