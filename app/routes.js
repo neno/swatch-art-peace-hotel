@@ -23,16 +23,16 @@ export default function createRoutes(store) {
       getComponent(nextState, cb) {
         const importModules = Promise.all([
           import('pages/HomePage'),
-          import('containers/GalleryContainer/reducer'),
-          import('containers/GalleryContainer/sagas'),
+          import('containers/NewsContainer/reducer'),
+          import('containers/NewsContainer/sagas'),
           import('containers/NavigationContainer/reducer'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([component, galleryContainerReducer, galleryContainerSagas, navigationContainerReducer]) => {
-          injectReducer('galleryContainer', galleryContainerReducer.default);
-          injectSagas(galleryContainerSagas.default);
+        importModules.then(([component, newsContainerReducer, newsContainerSagas, navigationContainerReducer]) => {
+          injectReducer('newsContainer', newsContainerReducer.default);
+          injectSagas(newsContainerSagas.default);
           injectReducer('navigationContainer', navigationContainerReducer.default);
           renderRoute(component);
         });

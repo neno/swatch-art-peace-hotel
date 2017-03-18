@@ -10,20 +10,23 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
-import GalleryContainer from '../../containers/GalleryContainer';
+import PageTitle from '../../components/PageTitle';
+import NewsContainer from '../../containers/NewsContainer';
+import FeaturedNews from '../../components/FeaturedNews';
 import NavigationContainer from '../../containers/NavigationContainer';
+import config from '../../config';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
+    const { title, description } = config.pages.HomePage;
+
     return (
       <div>
-        <h1>
-          <FormattedMessage {...messages.header} />
-        </h1>
+        <PageTitle title={title} description={description} />
+        <NewsContainer>
+          <FeaturedNews />
+        </NewsContainer>
         <NavigationContainer />
-        <GalleryContainer />
       </div>
     );
   }

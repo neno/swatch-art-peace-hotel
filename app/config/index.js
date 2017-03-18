@@ -8,6 +8,10 @@ export default {
     bigDesktopUp: 'bigDesktopUp',
   },
   pages: {
+    HomePage: {
+      title: 'Welcome',
+      description: '',
+    },
     VirtualMuseum: {
       title: 'Virtual Museum',
       description: '',
@@ -21,10 +25,6 @@ export default {
           description: '',
         },
       },
-    },
-    ArtistsInResidence: {
-      title: 'Artists In Residence',
-      description: '',
     },
   },
   Gallery: {

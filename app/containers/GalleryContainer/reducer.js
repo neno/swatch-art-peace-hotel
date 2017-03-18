@@ -9,7 +9,9 @@ import {
   GET_ARTWORKS_SUCCEEDED,
 } from './constants';
 
-const initialState = fromJS({});
+const initialState = fromJS({
+  artworks: [],
+});
 
 function galleryContainerReducer(state = initialState, action) {
   switch (action.type) {
