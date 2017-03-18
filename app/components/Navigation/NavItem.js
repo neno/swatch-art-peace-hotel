@@ -4,7 +4,7 @@ import A from './A';
 const NavItem = ({ item, handleRoute }) => (
   <li>
     <A href={item.path} onClick={(e) => handleRoute(e, item)}>
-      {item.title}
+      {item.title.charAt(0).toUpperCase() + item.title.slice(1)}
     </A>
   </li>
 );

@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 
 const A = styled.a`
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 0.25em;
-  text-decoration: none;
-  border-radius: 4px;
-  -webkit-font-smoothing: antialiased;
-  -webkit-touch-callout: none;
-  user-select: none;
-  cursor: pointer;
-  outline: 0;
+  display: block;
+  padding: 0 20px;
+  font-family: WorkSans;
+  font-size: 18px;
+  line-height: 2.39;
   color: #000;
+  text-decoration: inherit;
+  
+  &:first-letter {
+    text-transform: uppercase;
+  }
   
   &:active,
   &:hover {
-    color: brown;
+    color: #ac7e49;
   }
 `;
 
