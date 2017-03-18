@@ -7,6 +7,12 @@ export default {
     desktopUp: 'desktopUp',
     bigDesktopUp: 'bigDesktopUp',
   },
+  breakpointBoundaries: {
+    phoneUpperBoundary: 600,
+    tabletPortraitUpperBoundary: 900,
+    tabletLandscapeUpperBoundary: 1200,
+    desktopUpperBoundary: 1800,
+  },
   pages: {
     HomePage: {
       title: 'Welcome',
