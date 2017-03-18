@@ -2,16 +2,9 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   position: absolute;
-  top: 22px
-  left: 24px;
+  top: 22px;
+  right: 20px;
   padding: 0;
-  display: flex;
-  padding: 0;
-  font-family: 'WorkSans', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 40px;
   
   i {
     display: flex;
@@ -19,7 +12,6 @@ const Button = styled.button`
     justify-content: center;
     width: 40px;
     height: 40px;
-    margin-right: 12px;
   }
 `;
 
