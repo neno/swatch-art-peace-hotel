@@ -25,14 +25,25 @@ export default function createRoutes(store) {
           import('pages/HomePage'),
           import('containers/NewsContainer/reducer'),
           import('containers/NewsContainer/sagas'),
+          import('containers/FeaturesContainer/reducer'),
+          import('containers/FeaturesContainer/sagas'),
           import('containers/NavigationContainer/reducer'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([component, newsContainerReducer, newsContainerSagas, navigationContainerReducer]) => {
+        importModules.then(([
+          component,
+          newsContainerReducer,
+          newsContainerSagas,
+          featuresContainerReducer,
+          featuresContainerSagas,
+          navigationContainerReducer,
+        ]) => {
           injectReducer('newsContainer', newsContainerReducer.default);
           injectSagas(newsContainerSagas.default);
+          injectReducer('featuresContainer', featuresContainerReducer.default);
+          injectSagas(featuresContainerSagas.default);
           injectReducer('navigationContainer', navigationContainerReducer.default);
           renderRoute(component);
         });

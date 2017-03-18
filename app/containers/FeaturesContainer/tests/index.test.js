@@ -1,10 +1,10 @@
 // import React from 'react';
 // import { shallow } from 'enzyme';
 
-// import { MeetArtistsPage } from '../index';
+// import { FeaturesContainer } from '../index';
 
-describe('<MeetArtistsPage />', () => {
+describe('<FeaturesContainer />', () => {
   it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(true);
+    expect(true).toEqual(false);
   });
 });

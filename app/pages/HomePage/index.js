@@ -11,6 +11,7 @@
 
 import React from 'react';
 import PageTitle from '../../components/PageTitle';
+import FeaturesContainer from '../../containers/FeaturesContainer';
 import NewsContainer from '../../containers/NewsContainer';
 import FeaturedNews from '../../components/FeaturedNews';
 import NavigationContainer from '../../containers/NavigationContainer';
@@ -23,6 +24,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     return (
       <div>
         <PageTitle title={title} description={description} />
+        <FeaturesContainer />
         <NewsContainer>
           <FeaturedNews />
         </NewsContainer>
