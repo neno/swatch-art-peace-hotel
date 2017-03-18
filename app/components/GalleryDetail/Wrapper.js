@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   position: relative;
   // height: 400px;
   flex: 1 100%;
-  padding: 40px 10px;
+  padding: 60px 10px 40px;
   // margin-top: -10px;
   // margin-bottom: -10px;
   background: white;

@@ -13,6 +13,7 @@ import Detail from './Detail';
 import H2 from '../H2';
 import DetailImageWrapper from './DetailImageWrapper';
 import Info from './Info';
+import Actions from './Actions';
 import Thumb from './Thumb';
 import OverlayImage from './OverlayImage';
 import PrivateSpaceWrapper from './PrivateSpaceWrapper';
@@ -62,6 +63,7 @@ export class GalleryDetail extends PureComponent {
           <Close handleClose={handleCollapse} />
           <PrevNext skin={skins.prev} handleClick={() => this.goTo(prevId)} />
           <Detail>
+            <Actions />
             <DetailImageWrapper>
               <Overlay trigger={<Image src={this.state.detailImage} alt={item.title} />}>
                 <OverlayImage imageUrl={this.state.detailImage} />
