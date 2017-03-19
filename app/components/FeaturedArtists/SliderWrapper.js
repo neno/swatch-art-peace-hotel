@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 const SliderWrapper = styled.div`
   position: relative;
-  margin: 0 100px;
+  padding: 27px 60px 0;
   
   .slick-list {
+    padding-top: 20px; 
     overflow: hidden;
   }
   
@@ -29,15 +30,11 @@ const SliderWrapper = styled.div`
     }
   }
   .slick-prev {
-    left: -45px;
-    
-    &:before { content: 'Prev'; }
+    left: -100px;
   }
   
   .slick-next {
-    right: -45px;
-    
-    &:before { content: 'Next'; }
+    right: -100px;}
   }
   
   .slick-list {
