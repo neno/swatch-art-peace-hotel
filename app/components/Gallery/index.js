@@ -5,6 +5,8 @@
 */
 
 import React, { PropTypes } from 'react';
+import _ from 'lodash';
+
 import GalleryItem from '../GalleryItem';
 import GalleryDetail from '../GalleryDetail';
 import Wrapper from './Wrapper';
@@ -12,6 +14,7 @@ import Wrapper from './Wrapper';
 const Gallery = ({ artworksLength, itemsPerRow, items, context, handleExpand, handleCollapse, itemWidth, itemHeight, expandedId, prevId, nextId }) => (
   <Wrapper>
     {
+      !_.isEmpty(items) &&
       items.map((item, idx) => (
         item.expanded ? (
           <GalleryDetail
@@ -41,14 +44,14 @@ const Gallery = ({ artworksLength, itemsPerRow, items, context, handleExpand, ha
 );
 
 Gallery.propTypes = {
-  items: PropTypes.array.isRequired,
-  context: PropTypes.string.isRequired,
-  handleExpand: PropTypes.func.isRequired,
-  handleCollapse: PropTypes.func.isRequired,
-  itemWidth: PropTypes.string.isRequired,
-  itemHeight: PropTypes.string.isRequired,
-  itemsPerRow: PropTypes.number.isRequired,
-  artworksLength: PropTypes.number.isRequired,
+  items: PropTypes.array,
+  context: PropTypes.string,
+  handleExpand: PropTypes.func,
+  handleCollapse: PropTypes.func,
+  itemWidth: PropTypes.string,
+  itemHeight: PropTypes.string,
+  itemsPerRow: PropTypes.number,
+  artworksLength: PropTypes.number,
   expandedId: PropTypes.number,
   prevId: PropTypes.number,
   nextId: PropTypes.number,

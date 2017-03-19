@@ -4,9 +4,8 @@
  *
  */
 
-import React, { PropTypes } from 'react';
+import React, { PropTypes, PureComponent, cloneElement } from 'react';
 import { connect } from 'react-redux';
-import Gallery from 'components/Gallery';
 import _ from 'lodash';
 
 import makeSelectGalleryContainer from './selectors';
@@ -15,12 +14,13 @@ import { getBreakpoint } from '../../constants/breakpoints';
 import config from '../../config';
 
 
-export class GalleryContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export class GalleryContainer extends PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   static propTypes = {
     getArtworks: PropTypes.func.isRequired,
     context: PropTypes.string.isRequired,
     artworks: PropTypes.array,
+    children: PropTypes.any,
   };
 
   static defaultProps = {
@@ -126,19 +126,22 @@ export class GalleryContainer extends React.PureComponent { // eslint-disable-li
     return (
       _.isEmpty(items) ?
         <div></div> :
-        <Gallery
-          artworksLength={artworks.length}
-          items={items}
-          context={context}
-          handleExpand={this.expandDetail}
-          handleCollapse={this.reset}
-          itemsPerRow={itemsPerRow}
-          itemWidth={this.getItemWidth(itemsPerRow)}
-          itemHeight={`${itemHeight}px`}
-          expandedId={expandedId}
-          prevId={prevId}
-          nextId={nextId}
-        />
+        cloneElement(
+          this.props.children,
+          {
+            artworksLength: artworks.length,
+            items,
+            context,
+            itemsPerRow,
+            expandedId,
+            prevId,
+            nextId,
+            handleExpand: this.expandDetail,
+            handleCollapse: this.reset,
+            itemWidth: this.getItemWidth(itemsPerRow),
+            itemHeight: `${itemHeight}px`,
+          }
+        )
     );
   }
 }

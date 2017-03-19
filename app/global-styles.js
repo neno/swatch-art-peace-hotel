@@ -66,6 +66,7 @@ injectGlobal`
   
   button {
     cursor: pointer;
+    outline: none;
   }
 
   // body.fontLoaded {

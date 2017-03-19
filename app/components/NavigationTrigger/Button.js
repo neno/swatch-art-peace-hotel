@@ -12,6 +12,7 @@ const Button = styled.button`
   font-weight: 600;
   text-transform: uppercase;
   line-height: 40px;
+  outline: none;
   
   i {
     display: flex;

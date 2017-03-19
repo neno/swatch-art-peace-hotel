@@ -1,4 +1,50 @@
 // makeSelectLocationState expects a plain JS object for the routing state
+import { createSelector } from 'reselect';
+// import makeSelectNavigationContainer from '../NavigationContainer/selectors';
+
+// const makeSelectIsNavOpen = () => createSelector(
+//   makeSelectNavigationContainer(),
+//   (navigationContainerState) => navigationContainerState.isNavOpen
+// );
+
+const selectGlobal = (state) => state.get('global');
+
+const makeSelectIsNavOpen = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('isNavOpen')
+);
+
+const makeSelectIsSubNavOpen = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('isSubNavOpen')
+);
+
+const makeSelectNavItems = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('navItems').toJS()
+);
+
+const makeSelectSubNavItems = () => createSelector(
+  selectGlobal,
+  (globalState) => {
+    try {
+      return globalState.get('subNavItems').toJS();
+    } catch (e) {
+      return globalState.get('subNavItems');
+    }
+  }
+);
+
+const makeSelectActiveNavItem = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('activeNavItem')
+);
+
+const makeSelectActiveSubNavItem = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('activeSubNavItem')
+);
+
 const makeSelectLocationState = () => {
   let prevRoutingState;
   let prevRoutingStateJS;
@@ -16,5 +62,12 @@ const makeSelectLocationState = () => {
 };
 
 export {
+  selectGlobal,
   makeSelectLocationState,
+  makeSelectIsNavOpen,
+  makeSelectIsSubNavOpen,
+  makeSelectNavItems,
+  makeSelectSubNavItems,
+  makeSelectActiveNavItem,
+  makeSelectActiveSubNavItem,
 };

@@ -8,6 +8,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import PageTitle from '../../../components/PageTitle';
 import GalleryContainer from '../../../containers/GalleryContainer';
+import Gallery from '../../../components/Gallery';
 import config from '../../../config';
 
 export class DiscoverPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -16,7 +17,9 @@ export class DiscoverPage extends React.PureComponent { // eslint-disable-line r
     return (
       <div>
         <PageTitle title={title} description={description} />
-        <GalleryContainer context="artwork" />
+        <GalleryContainer context="artwork">
+          <Gallery />
+        </GalleryContainer>
       </div>
     );
   }

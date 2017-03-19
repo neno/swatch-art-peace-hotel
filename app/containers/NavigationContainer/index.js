@@ -6,58 +6,65 @@
 
 import React, { PropTypes, PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { browserHistory } from 'react-router';
 import _ from 'lodash';
 
 import Navigation from '../../components/Navigation';
-import makeSelectNavigationContainer from './selectors';
 import {
-  getNavItems,
-  activateItem,
-  activateSubitem,
-  openNav,
-  closeNav,
-} from './actions';
+  makeSelectNavItems,
+  makeSelectSubNavItems,
+  makeSelectIsNavOpen,
+  makeSelectIsSubNavOpen,
+  makeSelectActiveNavItem,
+  makeSelectActiveSubNavItem,
+} from '../App/selectors';
+import {
+  activateNavItem,
+  activateSubNavItem,
+} from '../App/actions';
 
 export class NavigationContainer extends PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   static propTypes = {
-    getNavItems: PropTypes.func.isRequired,
-    activateItem: PropTypes.func.isRequired,
-    activateSubitem: PropTypes.func.isRequired,
-    closeNav: PropTypes.func.isRequired,
-    openNav: PropTypes.func.isRequired,
+    activateNavItem: PropTypes.func.isRequired,
+    activateSubNavItem: PropTypes.func.isRequired,
     navItems: PropTypes.array,
     subNavItems: PropTypes.array,
     activeNavItem: PropTypes.string,
     activeSubNavItem: PropTypes.string,
-    isOpenLevel1: PropTypes.bool,
-    isOpenLevel2: PropTypes.bool,
+    isNavOpen: PropTypes.bool,
+    isSubNavOpen: PropTypes.bool,
   };
 
   static defaultProps = {
-    isOpenLevel1: true,
-    isOpenLevel2: false,
+    isSubNavOpen: false,
   };
-
-  componentDidMount() {
-    this.props.getNavItems();
-  }
 
   sortNavItems = (navItems) => _.sortBy(navItems, 'sort');
 
   activateRoute = (e, navItem) => {
-    e.preventDefault();
-    this.props.activateItem(navItem);
+    this.pushToRoute(e);
+    this.props.activateNavItem(navItem);
   };
 
   activateSubRoute = (e, subNavItem) => {
-    e.preventDefault();
-    this.props.activateSubitem(subNavItem);
+    this.pushToRoute(e);
+    this.props.activateSubNavItem(subNavItem);
   };
 
   pushToRoute = (e) => {
     e.preventDefault();
-    console.log('pushToRoute', e.target.href); // eslint-disable-line no-console
+
+    const base = window.location.origin;
+    const allowedPaths = [
+      `${base}/virtual-museum-discover`,
+      `${base}/virtual-museum-meet-artists`,
+    ];
+
+    if (_.includes(allowedPaths, e.target.href)) {
+      browserHistory.push(e.target.href);
+    }
   };
 
   render() {
@@ -66,8 +73,8 @@ export class NavigationContainer extends PureComponent { // eslint-disable-line 
       subNavItems,
       activeNavItem,
       activeSubNavItem,
-      isOpenLevel1,
-      isOpenLevel2,
+      isNavOpen,
+      isSubNavOpen,
     } = this.props;
     const items = !_.isEmpty(navItems) ? this.sortNavItems(navItems) : [];
     return (
@@ -81,25 +88,28 @@ export class NavigationContainer extends PureComponent { // eslint-disable-line 
           handleSubRoute={this.activateSubRoute}
           activeNavItem={activeNavItem}
           activeSubNavItem={activeSubNavItem}
-          isOpenLevel1={isOpenLevel1}
-          isOpenLevel2={isOpenLevel2}
-          handleOpen={this.props.openNav}
-          handleClose={this.props.closeNav}
+          isNavOpen={isNavOpen}
+          isSubNavOpen={isSubNavOpen}
         />
       )
     );
   }
 }
 
-const mapStateToProps = makeSelectNavigationContainer();
+const mapStateToProps = createStructuredSelector({
+  navItems: makeSelectNavItems(),
+  subNavItems: makeSelectSubNavItems(),
+  isNavOpen: makeSelectIsNavOpen(),
+  isSubNavOpen: makeSelectIsSubNavOpen(),
+  activeNavItem: makeSelectActiveNavItem(),
+  activeSubNavItem: makeSelectActiveSubNavItem(),
+});
+
 
 function mapDispatchToProps(dispatch) {
   return {
-    getNavItems: () => dispatch(getNavItems()),
-    activateItem: (id) => dispatch(activateItem(id)),
-    activateSubitem: (id) => dispatch(activateSubitem(id)),
-    openNav: () => dispatch(openNav()),
-    closeNav: () => dispatch(closeNav()),
+    activateNavItem: (id) => dispatch(activateNavItem(id)),
+    activateSubNavItem: (id) => dispatch(activateSubNavItem(id)),
   };
 }
 

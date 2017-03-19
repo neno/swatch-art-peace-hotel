@@ -17,27 +17,22 @@ const Navigation = ({
   handleSubRoute,
   activeNavItem,
   activeSubNavItem,
-  isOpenLevel1,
-  isOpenLevel2,
-  handleOpen,
-  handleClose,
+  isNavOpen,
+  isSubNavOpen,
 }) => (
   <Nav>
     {
-      isOpenLevel1 &&
-      <OffCanvas className="navLevel1" isOpen={isOpenLevel1} level={1}>
+      isNavOpen &&
+      <OffCanvas className="navLevel1" isOpen={isNavOpen} level={1}>
         <NavList items={navItems} handleRoute={handleRoute} activeItem={activeNavItem} />
-        <button onClick={handleClose}>Close Navigation</button>
       </OffCanvas>
     }
     {
-      (isOpenLevel2 && !_.isEmpty(subNavItems)) &&
-      <OffCanvas className="navLevel2" isOpen={isOpenLevel2} level={2}>
+      (isSubNavOpen && !_.isEmpty(subNavItems)) &&
+      <OffCanvas className="navLevel2" isOpen={isSubNavOpen} level={2}>
         <NavList items={subNavItems} handleRoute={handleSubRoute} activeItem={activeSubNavItem} />
       </OffCanvas>
     }
-
-    <button onClick={handleOpen}>Open Navigation</button>
   </Nav>
 );
 
@@ -48,10 +43,8 @@ Navigation.propTypes = {
   handleSubRoute: PropTypes.func.isRequired,
   activeNavItem: PropTypes.string,
   activeSubNavItem: PropTypes.string,
-  isOpenLevel1: PropTypes.bool,
-  isOpenLevel2: PropTypes.bool,
-  handleOpen: PropTypes.func.isRequired,
-  handleClose: PropTypes.func.isRequired,
+  isNavOpen: PropTypes.bool,
+  isSubNavOpen: PropTypes.bool,
 };
 
 export default Navigation;

@@ -10,17 +10,18 @@ import close from '../../img/close.svg';
 import menu from '../../img/menu.svg';
 
 
-const NavigationTrigger = ({ isNavActive }) => (
-  <Button>
+const NavigationTrigger = ({ toggleNav, isNavOpen }) => (
+  <Button onClick={toggleNav}>
     <i>
-      <img src={isNavActive ? close : menu} alt="Close icon" />
+      <img src={isNavOpen ? close : menu} alt="Close icon" />
     </i>
     Menu
   </Button>
 );
 
 NavigationTrigger.propTypes = {
-  isNavActive: PropTypes.bool.isRequired,
+  isNavOpen: PropTypes.bool,
+  toggleNav: PropTypes.func.isRequired,
 };
 
 export default NavigationTrigger;
