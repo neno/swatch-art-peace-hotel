@@ -1,8 +1,15 @@
 import styled from 'styled-components';
+import { media } from '../../style-utils';
 
 const SliderWrapper = styled.div`
   position: relative;
-  padding: 27px 60px 0;
+  padding: 27px 60px 50px;
+  
+  ${media.tablet`
+    padding-left: 60px;
+    padding-left: 60px;
+  `} 
+
   
   .slick-list {
     padding-top: 20px; 
@@ -15,10 +22,10 @@ const SliderWrapper = styled.div`
     // height: 50px;
     width: 50px;
     top: 50%;
-    margin-top: -7px;
     padding: 0;
     font-size: 0;
     text-align: center;
+    transform: translateY(-50%);
     
      &:before {
       font-family: OpenSans;
@@ -30,11 +37,11 @@ const SliderWrapper = styled.div`
     }
   }
   .slick-prev {
-    left: -100px;
+    left: -12px;
   }
   
   .slick-next {
-    right: -100px;}
+    right: -12px;}
   }
   
   .slick-list {

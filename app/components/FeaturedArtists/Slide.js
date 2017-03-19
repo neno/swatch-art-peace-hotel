@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 const Article = styled.article`
   position: relative;
-  margin: 0 10px;
   width: 190px;
-  height: 190px;
+  margin: 0 10px;
   background: url(${(props) => props.artist.image}) center no-repeat;
   background-size: cover;
   
@@ -13,8 +12,10 @@ const Article = styled.article`
     display: flex;
     align-items: center;
     padding: 20px 30px;
-    width: 145px;
-    height: 145px;
+    width: 100%;
+    height: 100%;
+    max-width: 145px;
+    max-height: 145px;
     top: 50%;
     left: 50%;
     border-radius: 50%;
@@ -34,6 +35,12 @@ const Article = styled.article`
   }
   
   &:before {
+    content:'';
+    padding-top:100%; /* vertical value as  100% equals width */
+    display: block;
+  }
+  
+   &:after {
     content: '';
     display: block;
     position: absolute;
@@ -53,7 +60,7 @@ const Article = styled.article`
       transform: translate(-50%, -50%) scale(1);
      }
      
-     &:before {
+     &:after {
        opacity: 1;
        transform: translateY(-20px);
      }
