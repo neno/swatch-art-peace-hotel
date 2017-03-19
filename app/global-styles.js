@@ -92,6 +92,15 @@ injectGlobal`
   //   line-height: 1.5em;
   // }
   
+  a {
+    &,
+    &:active,
+    &:hover {    
+      color: inherit;
+      text-decoration: inherit;
+    }
+  }
+  
   img {
     max-width: 100%;
     vertical-align: bottom;
