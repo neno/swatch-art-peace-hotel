@@ -50,6 +50,16 @@ const makeSelectActiveSubNavItem = () => createSelector(
   (globalState) => globalState.get('activeSubNavItem')
 );
 
+const makeSelectSearchCategories = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('searchCategories').toJS()
+);
+
+const makeSelectRandomSearch = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('randomSearch').toJS()
+);
+
 const makeSelectLocationState = () => {
   let prevRoutingState;
   let prevRoutingStateJS;
@@ -76,4 +86,6 @@ export {
   makeSelectSubNavItems,
   makeSelectActiveNavItem,
   makeSelectActiveSubNavItem,
+  makeSelectSearchCategories,
+  makeSelectRandomSearch,
 };

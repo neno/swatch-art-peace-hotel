@@ -9,6 +9,9 @@ import Button from './Button';
 import Overlay from '../Overlay';
 import search from '../../img/search.svg';
 import close from '../../img/close.svg';
+import SearchCategoriesContainer from '../../containers/SearchCategoriesContainer';
+import SearchRandomContainer from '../../containers/SearchRandomContainer';
+import SearchForm from '../SearchForm';
 
 const SearchTrigger = ({ toggleSearch, isSearchOpen }) => {
   const trigger = (
@@ -27,9 +30,9 @@ const SearchTrigger = ({ toggleSearch, isSearchOpen }) => {
       buttonTitle={isSearchOpen ? 'Close search' : 'Open search'}
       isOpen={isSearchOpen}
     >
-      <h1>
-        This is the search!!!
-      </h1>
+      <SearchForm />
+      <SearchCategoriesContainer />
+      <SearchRandomContainer />
     </Overlay>
   );
 };

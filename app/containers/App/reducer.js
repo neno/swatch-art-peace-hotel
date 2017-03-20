@@ -16,6 +16,73 @@ import {
 
 import navData from '../../data/navigation.json';
 
+
+const searchCategories = [
+  {
+    title: 'Form of art',
+    links: [
+      'Performing Arts',
+      'Visual Arts',
+      'Photography',
+      'Painting',
+      'Design',
+      'Music and auditory arts',
+    ],
+  },
+  {
+    title: 'Medium',
+    links: [
+      'Sound',
+      'Image',
+      'Photo',
+      'Video',
+      'Installation',
+      'Multimedia',
+    ],
+  },
+  {
+    title: 'Years',
+    links: [
+      '2016',
+      '2015',
+      '2014',
+      '2013',
+      '2012',
+      '2011',
+    ],
+  },
+  {
+    title: 'World regions',
+    links: [
+      'Europe',
+      'Americas',
+      'Middle Easet',
+      'Africa',
+      'Far East',
+      'Oceania',
+    ],
+  },
+];
+
+const randomSearch = [
+  {
+    title: 'Random I',
+    image: 'random1.jpg',
+  },
+  {
+    title: 'Random II',
+    image: 'random2.jpg',
+  },
+  {
+    title: 'Random III',
+    image: 'random3.jpg',
+  },
+  {
+    title: 'Random IV',
+    image: 'random4.jpg',
+  },
+];
+
 const initialState = fromJS({
   isNavOpen: false,
   isSubNavOpen: false,
@@ -24,6 +91,8 @@ const initialState = fromJS({
   subNavItems: [],
   activeNavItem: null,
   activeSubNavItem: null,
+  searchCategories,
+  randomSearch,
 });
 
 function navigationContainerReducer(state = initialState, action) {
