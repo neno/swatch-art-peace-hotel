@@ -7,6 +7,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import LinkList from './LinkList';
+import SocialLinks from '../SocialLinks';
 import { media } from '../../style-utils';
 
 
@@ -43,7 +44,7 @@ function Footer() {
     <footer>
       <Wrapper>
         <Inner>
-          Social List
+          <SocialLinks />
         </Inner>
       </Wrapper>
       <Wrapper>
