@@ -5,6 +5,7 @@
 */
 
 import React, { PropTypes } from 'react';
+import styled from 'styled-components';
 import Button from './Button';
 import Overlay from '../Overlay';
 import search from '../../img/search.svg';
@@ -12,8 +13,13 @@ import close from '../../img/close.svg';
 import SearchCategoriesContainer from '../../containers/SearchCategoriesContainer';
 import SearchRandomContainer from '../../containers/SearchRandomContainer';
 import SearchForm from '../SearchForm';
+import ApplyNow from '../ApplyNow';
 
 const SearchTrigger = ({ toggleSearch, isSearchOpen }) => {
+  const Centered = styled.div`
+    text-align: center;
+  `;
+
   const trigger = (
     <Button>
       <i>
@@ -33,6 +39,9 @@ const SearchTrigger = ({ toggleSearch, isSearchOpen }) => {
       <SearchForm />
       <SearchCategoriesContainer />
       <SearchRandomContainer />
+      <Centered>
+        <ApplyNow />
+      </Centered>
     </Overlay>
   );
 };
