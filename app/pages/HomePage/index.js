@@ -14,6 +14,7 @@ import PageTitle from '../../components/PageTitle';
 import FeaturesContainer from '../../containers/FeaturesContainer';
 import NewsContainer from '../../containers/NewsContainer';
 import FeaturedNews from '../../components/FeaturedNews';
+import GalleryContainer from '../../containers/GalleryContainer';
 import FeaturedArtists from '../../components/FeaturedArtists';
 import VirtualMuseumSection from '../../components/VirtualMuseumSection';
 import config from '../../config';
@@ -29,7 +30,9 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
         <NewsContainer>
           <FeaturedNews />
         </NewsContainer>
-        <FeaturedArtists />
+        <GalleryContainer context="artist">
+          <FeaturedArtists />
+        </GalleryContainer>
         <VirtualMuseumSection />
       </div>
     );

@@ -27,6 +27,8 @@ export default function createRoutes(store) {
           import('containers/NewsContainer/sagas'),
           import('containers/FeaturesContainer/reducer'),
           import('containers/FeaturesContainer/sagas'),
+          import('containers/GalleryContainer/reducer'),
+          import('containers/GalleryContainer/sagas'),
         ]);
 
         const renderRoute = loadModule(cb);
@@ -37,11 +39,15 @@ export default function createRoutes(store) {
           newsContainerSagas,
           featuresContainerReducer,
           featuresContainerSagas,
+          galleryContainerReducer,
+          galleryContainerSagas,
         ]) => {
           injectReducer('newsContainer', newsContainerReducer.default);
           injectSagas(newsContainerSagas.default);
           injectReducer('featuresContainer', featuresContainerReducer.default);
           injectSagas(featuresContainerSagas.default);
+          injectReducer('galleryContainer', galleryContainerReducer.default);
+          injectSagas(galleryContainerSagas.default);
           renderRoute(component);
         });
 

@@ -69,6 +69,8 @@ export class GalleryContainer extends PureComponent { // eslint-disable-line rea
     return artworks;
   };
 
+  getArtists = (artworks) => artworks.map((a) => a.artist)
+
   getArtwork = (id) => (
     _.find(this.props.artworks, { id })
   );
@@ -122,7 +124,7 @@ export class GalleryContainer extends PureComponent { // eslint-disable-line rea
     const { artworks, context } = this.props;
     const { itemsPerRow, itemHeight, expandedId, prevId, nextId } = this.state;
     const items = this.getItems(artworks, expandedId);
-
+    const artists = this.getArtists(artworks);
     return (
       _.isEmpty(items) ?
         <div></div> :
@@ -131,6 +133,7 @@ export class GalleryContainer extends PureComponent { // eslint-disable-line rea
           {
             artworksLength: artworks.length,
             items,
+            artists,
             context,
             itemsPerRow,
             expandedId,

@@ -4,7 +4,7 @@
 *
 */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Slider from 'react-slick';
 import Slide from './Slide';
 import SliderWrapper from './SliderWrapper';
@@ -12,65 +12,10 @@ import Arrow from './Arrow';
 import Section from '../Section';
 import SectionTitle from '../SectionTitle';
 import Constrained from '../Constrained';
-import Button from '../Button';
+import ApplyNow from '../ApplyNow';
 import arrowPrev from '../../img/arrow-prev.svg';
 import arrowNext from '../../img/arrow-next.svg';
 import config from '../../config';
-
-const artists = [
-  {
-    image: 'https://placehold.it/250X250',
-    name: 'Paul Hansen Germany',
-  },
-  {
-    image: 'https://placehold.it/250X250',
-    name: 'Paul Hansen Germany',
-  },
-  {
-    image: 'https://placehold.it/250X250',
-    name: 'Paul Hansen Germany',
-  },
-  {
-    image: 'https://placehold.it/250X250',
-    name: 'Paul Hansen Germany',
-  },
-  {
-    image: 'https://placehold.it/250X250',
-    name: 'Paul Hansen Germany',
-  },
-  {
-    image: 'https://placehold.it/250X250',
-    name: 'Paul Hansen Germany',
-  },
-  {
-    image: 'https://placehold.it/250X250',
-    name: 'Paul Hansen Germany',
-  },
-  {
-    image: 'https://placehold.it/250X250',
-    name: 'Paul Hansen Germany',
-  },
-  {
-    image: 'https://placehold.it/250X250',
-    name: 'Paul Hansen Germany',
-  },
-  {
-    image: 'https://placehold.it/250X250',
-    name: 'Paul Hansen Germany',
-  },
-  {
-    image: 'https://placehold.it/250X250',
-    name: 'Paul Hansen Germany',
-  },
-  {
-    image: 'https://placehold.it/250X250',
-    name: 'Paul Hansen Germany',
-  },
-  {
-    image: 'https://placehold.it/250X250',
-    name: 'Paul Hansen Germany',
-  },
-];
 
 const prevButton = <Arrow {...this.props}><img src={arrowPrev} alt={'prev'} /></Arrow>;
 const nextButton = <Arrow {...this.props}><img src={arrowNext} alt={'next'} /></Arrow>;
@@ -114,30 +59,38 @@ const settings = {
   ],
 };
 
-const slides = artists.map((artist, i) => (
-  <Slide key={i} artist={artist}>
-    <div>
-      <p>{artist.name}</p>
-    </div>
-  </Slide>
-));
+const FeaturedArtists = ({ artists }) => {
+  const artistsArray = artists.map((a) => ({
+    name: a.name,
+    image: `img/${a.profileImage}`,
+  }));
 
-const FeaturedArtists = () => (
+  const slides = artistsArray.map((artist, i) => (
+    <Slide key={i} artist={artist}>
+      <div>
+        <p>{artist.name}</p>
+      </div>
+    </Slide>
+  ));
 
-  <Section>
-    <Constrained>
-      <SectionTitle>Artists in residence</SectionTitle>
-      <SliderWrapper>
-        <Slider {...settings}>
-          {slides}
-        </Slider>
-      </SliderWrapper>
-      <Button>
-        Apply Now!
-      </Button>
-    </Constrained>
-  </Section>
-);
+  return (
+    <Section>
+      <Constrained>
+        <SectionTitle>Artists in residence</SectionTitle>
+        <SliderWrapper>
+          <Slider {...settings}>
+            {slides}
+          </Slider>
+        </SliderWrapper>
+        <ApplyNow />
+      </Constrained>
+    </Section>
+  );
+};
+
+FeaturedArtists.propTypes = {
+  artists: PropTypes.array,
+};
 
 
 export default FeaturedArtists;
