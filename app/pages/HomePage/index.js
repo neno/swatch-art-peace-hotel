@@ -15,6 +15,7 @@ import FeaturesContainer from '../../containers/FeaturesContainer';
 import NewsContainer from '../../containers/NewsContainer';
 import FeaturedNews from '../../components/FeaturedNews';
 import FeaturedArtists from '../../components/FeaturedArtists';
+import VirtualMuseumSection from '../../components/VirtualMuseumSection';
 import config from '../../config';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -29,6 +30,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
           <FeaturedNews />
         </NewsContainer>
         <FeaturedArtists />
+        <VirtualMuseumSection />
       </div>
     );
   }
