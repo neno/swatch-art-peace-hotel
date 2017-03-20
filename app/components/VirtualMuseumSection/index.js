@@ -1,6 +1,6 @@
 /**
 *
-* SearchModal
+* VirtualMuseumSection
 *
 */
 
@@ -8,15 +8,15 @@ import React from 'react';
 // import styled from 'styled-components';
 
 
-function SearchModal() {
+function VirtualMuseumSection() {
   return (
     <div>
     </div>
   );
 }
 
-SearchModal.propTypes = {
+VirtualMuseumSection.propTypes = {
 
 };
 
-export default SearchModal;
+export default VirtualMuseumSection;
