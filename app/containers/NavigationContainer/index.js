@@ -22,6 +22,7 @@ import {
 import {
   activateNavItem,
   activateSubNavItem,
+  toggleNav,
 } from '../App/actions';
 
 export class NavigationContainer extends PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -29,6 +30,7 @@ export class NavigationContainer extends PureComponent { // eslint-disable-line 
   static propTypes = {
     activateNavItem: PropTypes.func.isRequired,
     activateSubNavItem: PropTypes.func.isRequired,
+    toggleNav: PropTypes.func.isRequired,
     navItems: PropTypes.array,
     subNavItems: PropTypes.array,
     activeNavItem: PropTypes.string,
@@ -64,6 +66,7 @@ export class NavigationContainer extends PureComponent { // eslint-disable-line 
 
     if (_.includes(allowedPaths, e.target.href)) {
       browserHistory.push(e.target.href);
+      this.props.toggleNav();
     }
   };
 
@@ -110,6 +113,7 @@ function mapDispatchToProps(dispatch) {
   return {
     activateNavItem: (id) => dispatch(activateNavItem(id)),
     activateSubNavItem: (id) => dispatch(activateSubNavItem(id)),
+    toggleNav: () => dispatch(toggleNav()),
   };
 }
 

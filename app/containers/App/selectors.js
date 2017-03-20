@@ -19,6 +19,11 @@ const makeSelectIsSubNavOpen = () => createSelector(
   (globalState) => globalState.get('isSubNavOpen')
 );
 
+const makeSelectIsSearchOpen = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('isSearchOpen')
+);
+
 const makeSelectNavItems = () => createSelector(
   selectGlobal,
   (globalState) => globalState.get('navItems').toJS()
@@ -66,6 +71,7 @@ export {
   makeSelectLocationState,
   makeSelectIsNavOpen,
   makeSelectIsSubNavOpen,
+  makeSelectIsSearchOpen,
   makeSelectNavItems,
   makeSelectSubNavItems,
   makeSelectActiveNavItem,

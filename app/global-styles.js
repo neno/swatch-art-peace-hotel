@@ -114,6 +114,16 @@ injectGlobal`
   .ReactModal__Body--open .ReactModal__Overlay {
     z-index: 1000;
     background-color: rgba(255, 255, 255, 0.9) !important;
+    top: 80px !important;
+  }
+  
+  .ReactModal__Body--open .ReactModal__Overlay .ReactModal__Content {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    border: none !important;
+    background-color: transparent !important;
   }
   
 `;

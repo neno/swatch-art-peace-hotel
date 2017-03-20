@@ -35,6 +35,13 @@ export class GalleryDetail extends PureComponent {
     nextId: PropTypes.number,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      showFullScreen: false,
+    };
+  }
+
   componentWillMount() {
     const { item } = this.props;
     this.setDetailImage(item.traceImage);
@@ -55,6 +62,8 @@ export class GalleryDetail extends PureComponent {
     this.props.handleExpand(id);
   };
 
+  toggleFullScreen = () => this.setState({ showFullScreen: !this.state.showFullScreen });
+
   render() {
     const { item, handleCollapse, prevId, nextId } = this.props;
     return (
@@ -65,7 +74,13 @@ export class GalleryDetail extends PureComponent {
           <Detail>
             <Actions />
             <DetailImageWrapper>
-              <Overlay trigger={<Image src={this.state.detailImage} alt={item.title} />}>
+              <Overlay
+                trigger={<Image src={this.state.detailImage} alt={item.title} />}
+                isOpen={this.state.showFullScreen}
+                handleOpen={this.toggleFullScreen}
+                handleClose={this.toggleFullScreen}
+              >
+                <Close handleClose={this.toggleFullScreen} />
                 <OverlayImage imageUrl={this.state.detailImage} />
               </Overlay>
             </DetailImageWrapper>

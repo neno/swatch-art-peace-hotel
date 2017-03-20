@@ -6,15 +6,15 @@
 
 import React from 'react';
 import NavigationToggleContainer from '../../containers/NavigationToggleContainer';
+import SearchToggleContainer from '../../containers/SearchToggleContainer';
 import Wrapper from './Wrapper';
 import Logo from '../Logo';
-import SearchTrigger from '../SearchTrigger';
 
 const Header = () => (
   <Wrapper>
     <NavigationToggleContainer />
     <Logo />
-    <SearchTrigger />
+    <SearchToggleContainer />
   </Wrapper>
 );
 

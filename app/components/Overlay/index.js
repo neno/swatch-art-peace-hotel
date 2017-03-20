@@ -13,33 +13,43 @@ class Overlay extends React.Component { // eslint-disable-line react/prefer-stat
 
   static propTypes = {
     trigger: PropTypes.node.isRequired,
+    handleOpen: PropTypes.func,
+    handleClose: PropTypes.func,
+    buttonTitle: PropTypes.string,
+    isOpen: PropTypes.bool,
     children: PropTypes.any,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      modalIsOpen: false,
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     modalIsOpen: false,
+  //   };
+  // }
 
   openModal = () => {
-    this.setState({ modalIsOpen: true });
+    // this.setState({ modalIsOpen: true });
+    if (this.props.handleOpen) {
+      this.props.handleOpen();
+    }
   };
 
   closeModal = () => {
-    this.setState({ modalIsOpen: false });
+    // this.setState({ modalIsOpen: false });
+    if (this.props.handleClose) {
+      this.props.handleClose();
+    }
   };
 
   render() {
-    const { trigger, children } = this.props;
+    const { trigger, children, buttonTitle, isOpen } = this.props;
     return (
       <div>
-        <Button onClick={this.openModal}>
+        <Button onClick={this.openModal} title={buttonTitle}>
           { trigger }
         </Button>
         <Modal
-          isOpen={this.state.modalIsOpen}
+          isOpen={isOpen}
           onRequestClose={this.closeModal}
           parentSelector={() => document.body}
           contentLabel="Modal"

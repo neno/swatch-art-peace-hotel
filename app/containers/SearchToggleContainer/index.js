@@ -4,31 +4,37 @@
  *
  */
 
-import React, { PropTypes } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import makeSelectSearchToggleContainer from './selectors';
+import { makeSelectIsSearchOpen } from '../App/selectors';
+import { toggleSearch } from '../App/actions';
+import SearchTrigger from '../../components/SearchTrigger';
 
-export class SearchToggleContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export class SearchToggleContainer extends PureComponent { // eslint-disable-line react/prefer-stateless-function
+
+  static propTypes = {
+    toggleSearch: PropTypes.func.isRequired,
+    isSearchOpen: PropTypes.bool,
+  };
+
   render() {
     return (
-      <div>
-      </div>
+      <SearchTrigger
+        toggleSearch={this.props.toggleSearch}
+        isSearchOpen={this.props.isSearchOpen}
+      />
     );
   }
 }
 
-SearchToggleContainer.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-};
-
 const mapStateToProps = createStructuredSelector({
-  SearchToggleContainer: makeSelectSearchToggleContainer(),
+  isSearchOpen: makeSelectIsSearchOpen(),
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch,
+    toggleSearch: () => dispatch(toggleSearch()),
   };
 }
 

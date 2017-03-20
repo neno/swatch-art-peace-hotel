@@ -1,9 +1,9 @@
 // import React from 'react';
 // import { shallow } from 'enzyme';
 
-// import NavigationTrigger from '../index';
+// import SearchModal from '../index';
 
-describe('<NavigationTrigger />', () => {
+describe('<SearchModal />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(true);
   });

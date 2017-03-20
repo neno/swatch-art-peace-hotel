@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
+const Button = styled.div`
   position: absolute;
   top: 22px;
   right: 20px;
