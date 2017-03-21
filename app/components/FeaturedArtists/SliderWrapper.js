@@ -53,43 +53,6 @@ const SliderWrapper = styled.div`
     display: flex;
     width: 100%;
   }
-  
-  .slick-dots {
-    position: absolute;
-    top: 50%;
-    right: 32px;
-    z-index: 20;
-    list-style: none;
-    font-size: 0;
-    text-align: center;
-    transform: rotate(-90deg) translateX(50%);
-    transform-origin: right center;
-  }
-  
-  .slick-dots li {
-    display: inline-block;
-  }
-  
-  .slick-dots li + li {
-    margin-left: 2px;
-  }
-  
-  .slick-dots button {
-    height: 8px;
-    width: 101px;
-    font-size: 0;
-    background-color: rgba(254,254,254, 0.3);
-    transition: .3s background;
-    
-    &:hover, 
-    &:active {
-      background-color: rgba(254,254,254, 1);
-    }
-  }
-  
-  .slick-active button {
-    background-color: rgba(254,254,254, 1);
-  }
 `;
 
 export default SliderWrapper;
