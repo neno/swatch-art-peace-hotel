@@ -5,6 +5,7 @@ const Button = styled.div`
   top: 22px;
   right: 20px;
   padding: 0;
+  cursor: pointer;
   
   i {
     display: flex;

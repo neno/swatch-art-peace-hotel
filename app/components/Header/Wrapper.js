@@ -1,15 +1,23 @@
 import styled from 'styled-components';
+import { media } from '../../style-utils';
 
 const Wrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  padding: 18px 130px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 90px 14px;
   z-index: 9000;
   height: 80px;
   width: 100%;
   background: white;
-  text-align: center;
+  
+  ${media.tabletLandscape`
+    padding-left: 130px;
+    padding-right: 130px;
+  `}
 `;
 
 export default Wrapper;

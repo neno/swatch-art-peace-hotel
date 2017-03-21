@@ -1,12 +1,17 @@
 import styled from 'styled-components';
+import { media } from '../../style-utils';
 
-const Wrapper = styled.h2`
+const H2 = styled.h2`
   margin: 0;
   font-family: 'ArchivoBlack';
-  font-weight: 900;
-  font-size: 62px;
+  font-size: 38px;
+  font-weight: 400;
   text-transform: uppercase;
   color: white;
+  
+  ${media.tablet`
+    font-size: 62px;
+  `}
 `;
 
-export default Wrapper;
+export default H2;

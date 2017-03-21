@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../style-utils';
 
 const Button = styled.button`
   position: absolute;
@@ -8,11 +9,12 @@ const Button = styled.button`
   display: flex;
   padding: 0;
   font-family: 'WorkSans', sans-serif;
-  font-size: 14px;
+  font-size: 0;
   font-weight: 600;
   text-transform: uppercase;
   line-height: 40px;
   outline: none;
+  cursor: pointer;
   
   i {
     display: flex;
@@ -20,8 +22,14 @@ const Button = styled.button`
     justify-content: center;
     width: 40px;
     height: 40px;
-    margin-right: 12px;
+    
   }
+  
+  ${media.tabletLandscape`
+    font-size: 14px;
+  
+    i { margin-right: 12px; }
+  `}
 `;
 
 export default Button;

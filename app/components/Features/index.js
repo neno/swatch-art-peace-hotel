@@ -12,6 +12,7 @@ import H2 from './H2';
 import P from './P';
 import ScrollToWrapper from './ScrollToWrapper';
 import ScrollTo from '../ScrollTo';
+import config from '../../config';
 
 function Features({ features }) {
   const settings = {
@@ -20,6 +21,17 @@ function Features({ features }) {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: true,
+    responsive: [
+      {
+        breakpoint: config.breakpointBoundaries.phoneUpperBoundary,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+        },
+      },
+    ],
   };
 
   const slides = features.map((feature, i) => (
@@ -32,7 +44,7 @@ function Features({ features }) {
   ));
 
   return (
-    <Wrapper>
+    <Wrapper isMobile>
       <Slider {...settings}>
         { slides }
       </Slider>

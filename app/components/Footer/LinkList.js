@@ -13,7 +13,7 @@ function Footer() {
   const Ul = styled.ul`
     list-style: none;
     padding: 0;
-    margin: 0 0 15px;
+    margin: 0 0 25px;
     font-size: 0;
     
     ${media.desktop`
@@ -22,11 +22,15 @@ function Footer() {
   `;
 
   const ListItem = styled.li`
-    display: inline-block;
+     display: block;
+     
+     & + & { margin-top: 10px; }
   
-    & + & {
-      margin-left: 25px;
-    }
+     ${media.tablet`
+       display: inline-block;
+     
+       & + & { margin-left: 25px; }
+    `}
   `;
 
   const FooterLink = styled(Link)`

@@ -41,6 +41,13 @@ function Footer() {
   `;
 
   const Copyright = styled.p`
+  
+    span {
+      font-size: 0;
+      display: block;
+      margin-top: 5px;
+    }
+    
     margin: 0;
     font-family: 'WorkSans', sans-serif;
     font-size: 14px;
@@ -48,6 +55,14 @@ function Footer() {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: #ac7e49;
+    
+    ${media.tablet`
+      span {
+        display: inline;
+        margin: 0;
+        font-size: 14px;
+      }
+    `}
   `;
 
   return (
@@ -60,7 +75,7 @@ function Footer() {
       <Wrapper>
         <Inner>
           <LinkList />
-          <Copyright>The Swatch Art Peace Hotel | © 2017 The Swatch Group Ltd</Copyright>
+          <Copyright>The Swatch Art Peace Hotel <span>|</span> © 2017 The Swatch Group Ltd</Copyright>
         </Inner>
       </Wrapper>
     </FooterWrapper>

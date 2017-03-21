@@ -4,7 +4,7 @@ const Article = styled.article`
   position: relative;
   display: table;
   width: 100%;
-  height: 90vh;
+  height: calc(100vh - 80px);
   overflow: hidden;
   
   background-size: cover;
