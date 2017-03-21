@@ -6,22 +6,20 @@
 
 import React from 'react';
 import Wrapper from './Wrapper';
-import facebook from '../../img/facebook.png';
-import wechat from '../../img/wechat.png';
-import instagram from '../../img/instagram.png';
 import Button from './Button';
+import Image from '../Image';
 
 function SocialLinks() {
   return (
     <Wrapper>
       <Button>
-        <img src={facebook} alt="Facebook" />
+        <Image src="facebook.png" alt="Facebook" />
       </Button>
       <Button>
-        <img src={wechat} alt="WeChat" />
+        <Image src="wechat.png" alt="WeChat" />
       </Button>
       <Button>
-        <img src={instagram} alt="Instagram" />
+        <Image src="instagram.png" alt="Instagram" />
       </Button>
     </Wrapper>
   );
