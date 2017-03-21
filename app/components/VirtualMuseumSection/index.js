@@ -7,6 +7,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import styled from 'styled-components';
+import { media } from '../../style-utils';
 import Section from '../Section';
 import Constrained from '../Constrained';
 import SectionTitle from '../SectionTitle';
@@ -16,17 +17,26 @@ import Image from '../Image';
 
 function VirtualMuseumSection() {
   const Left = styled.div`
-    margin-right: .5rem;
+    margin-bottom: 20px;
+  
     img {
       width: 100%;
     }
+  
+    ${media.tablet`
+      margin-right: 10px;
+    `}
+
   `;
 
   const Right = styled.div`
-    margin-left: .5rem;
     img {
       width: 100%;
     }
+  
+    ${media.tablet`
+      margin-left: 10px;
+    `}
   `;
 
   return (

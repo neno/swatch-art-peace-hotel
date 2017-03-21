@@ -9,7 +9,7 @@ import { Link } from 'react-scroll';
 import styled from 'styled-components';
 import arrowDown from '../../img/arrow-down.svg';
 
-const ScrollTo = ({ direction, to, smooth }) => {
+const ScrollTo = ({ direction, to, offset, smooth }) => {
   const Wrapper = styled(Link)`
     display: flex;
     margin: auto;
@@ -30,7 +30,7 @@ const ScrollTo = ({ direction, to, smooth }) => {
   `;
 
   return (
-    <Wrapper to={to} smooth={smooth} direction={direction}>
+    <Wrapper to={to} smooth={smooth} offset={offset} direction={direction}>
       <img src={arrowDown} alt="Arrow Down" />
     </Wrapper>
   );
@@ -40,6 +40,7 @@ ScrollTo.propTypes = {
   to: PropTypes.string,
   direction: PropTypes.string,
   smooth: PropTypes.bool,
+  offset: PropTypes.number,
 };
 
 ScrollTo.defaultProps = {

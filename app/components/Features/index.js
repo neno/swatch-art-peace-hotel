@@ -37,7 +37,7 @@ function Features({ features }) {
         { slides }
       </Slider>
       <ScrollToWrapper>
-        <ScrollTo to={'featuredNews'} />
+        <ScrollTo to={'featuredNews'} offset={-50} />
       </ScrollToWrapper>
     </Wrapper>
   );

@@ -24,9 +24,14 @@ function Footer() {
 
   const Inner = styled.div`
     margin: auto;
-    padding: 23px 90px 20px;
+    padding: 23px 20px 20px;
     max-width: 1420px;
     text-align: center;
+    
+    ${media.desktop`
+      padding-left: 90px;
+      padding-right: 90px;
+    `}
 
     ${media.desktop`
       display: flex;
