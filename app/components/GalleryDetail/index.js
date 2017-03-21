@@ -88,6 +88,7 @@ export class GalleryDetail extends PureComponent {
               <ArtistInfo
                 artist={item.artist}
                 title={!_.isEmpty(item.traceImages) && item.traceImages[0].title}
+                setImage={this.setDetailImage}
               />
               {
                 !_.isEmpty(item.traceImages) &&

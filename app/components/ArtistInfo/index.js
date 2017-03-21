@@ -13,14 +13,16 @@ import Image from '../Image';
 import H2 from '../H2';
 import StyledH4 from './StyledH4';
 
-const ArtistInfo = ({ artist, title }) => (
+const ArtistInfo = ({ artist, title, setImage }) => (
   <Wrapper>
     <H2>
       {artist.name}
     </H2>
     <Media>
       <MediaThumb>
-        <Image src={artist.profileImage} alt={artist.name} />
+        <button onClick={() => setImage(artist.profileImage)}>
+          <Image src={artist.profileImage} alt={artist.name} />
+        </button>
       </MediaThumb>
       <MediaBody>
         <p>
@@ -35,6 +37,7 @@ const ArtistInfo = ({ artist, title }) => (
 
 ArtistInfo.propTypes = {
   artist: PropTypes.object.isRequired,
+  setImage: PropTypes.func.isRequired,
   title: PropTypes.string,
 };
 
