@@ -11,7 +11,7 @@ import config from '../../config';
 const PageTitle = ({ title, description }) => (
   <Helmet
     title={title}
-    titleTemplate={`%s - ${config.AppName}`}
+    titleTemplate={`%s - ${config.appName}`}
     meta={[{
       name: 'description',
       content: description,
