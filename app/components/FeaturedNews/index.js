@@ -5,6 +5,7 @@
 */
 
 import React, { PropTypes } from 'react';
+import { Element } from 'react-scroll';
 import NewsArticle from '../NewsArticle';
 import Section from '../Section';
 import SectionTitle from '../SectionTitle';
@@ -15,23 +16,25 @@ import Column from './Column';
 const FeaturedNews = ({ news, title }) => {
   const half = Math.ceil(news.length / 2);
   return (
-    <Section>
-      <Constrained>
-        <SectionTitle>{title}</SectionTitle>
-        <Wrapper>
-          <Column>
-            {
-              news.slice(0, half).map((article, i) => <NewsArticle key={i} article={article} />)
-            }
-          </Column>
-          <Column>
-            {
-              news.slice(half, news.length).map((article, i) => <NewsArticle key={i} article={article} />)
-            }
-          </Column>
-        </Wrapper>
-      </Constrained>
-    </Section>
+    <Element name="featuredNews">
+      <Section>
+        <Constrained>
+          <SectionTitle>{title}</SectionTitle>
+          <Wrapper>
+            <Column>
+              {
+                news.slice(0, half).map((article, i) => <NewsArticle key={i} article={article} />)
+              }
+            </Column>
+            <Column>
+              {
+                news.slice(half, news.length).map((article, i) => <NewsArticle key={i} article={article} />)
+              }
+            </Column>
+          </Wrapper>
+        </Constrained>
+      </Section>
+    </Element>
   );
 };
 

@@ -82,7 +82,7 @@ const FeaturedArtists = ({ artists }) => {
             {slides}
           </Slider>
         </SliderWrapper>
-        <ApplyNow />
+        <ApplyNow noMargin />
       </Constrained>
     </Section>
   );

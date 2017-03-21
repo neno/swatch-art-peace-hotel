@@ -12,6 +12,11 @@ import { media } from '../../style-utils';
 
 
 function Footer() {
+  const FooterWrapper = styled.footer`
+    width: 100%;
+    margin-top: 90px;
+  `;
+
   const Wrapper = styled.div`
     width: 100%;
     border-top: solid 1px #7c5e3b;
@@ -41,7 +46,7 @@ function Footer() {
   `;
 
   return (
-    <footer>
+    <FooterWrapper>
       <Wrapper>
         <Inner>
           <SocialLinks />
@@ -53,7 +58,7 @@ function Footer() {
           <Copyright>The Swatch Art Peace Hotel | © 2017 The Swatch Group Ltd</Copyright>
         </Inner>
       </Wrapper>
-    </footer>
+    </FooterWrapper>
   );
 }
 

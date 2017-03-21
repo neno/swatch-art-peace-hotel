@@ -6,11 +6,12 @@
 
 import React, { PropTypes } from 'react';
 import Slider from 'react-slick';
-
 import Wrapper from './Wrapper';
 import Slide from './Slide';
 import H2 from './H2';
 import P from './P';
+import ScrollToWrapper from './ScrollToWrapper';
+import ScrollTo from '../ScrollTo';
 
 function Features({ features }) {
   const settings = {
@@ -35,6 +36,9 @@ function Features({ features }) {
       <Slider {...settings}>
         { slides }
       </Slider>
+      <ScrollToWrapper>
+        <ScrollTo to={'featuredNews'} />
+      </ScrollToWrapper>
     </Wrapper>
   );
 }

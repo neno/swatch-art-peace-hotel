@@ -17,6 +17,8 @@ import FeaturedNews from '../../components/FeaturedNews';
 import GalleryContainer from '../../containers/GalleryContainer';
 import FeaturedArtists from '../../components/FeaturedArtists';
 import VirtualMuseumSection from '../../components/VirtualMuseumSection';
+import Constrained from '../../components/Constrained';
+import ScrollToTop from '../../components/ScrollToTop';
 import config from '../../config';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -34,6 +36,9 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
           <FeaturedArtists />
         </GalleryContainer>
         <VirtualMuseumSection />
+        <Constrained>
+          <ScrollToTop />
+        </Constrained>
       </div>
     );
   }

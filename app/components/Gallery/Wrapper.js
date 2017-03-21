@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   align-content: flex-start;
   background: #999;
+  margin-bottom: 80px;
 `;
 
 export default Wrapper;
