@@ -39,9 +39,13 @@ class Description extends React.Component { // eslint-disable-line react/prefer-
       }
     `;
 
-    const Button = styled.div`
-      color: blue;
+    const Button = styled.button`
       margin-top: 10px;
+      text-decoration: underline;
+      
+      &:hover {
+        color: #7c5e3c;
+      }
     `;
 
     return (

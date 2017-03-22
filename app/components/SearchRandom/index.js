@@ -14,7 +14,7 @@ import H4 from '../H4';
 
 const SearchRandom = ({ randomSearch }) => {
   const Wrapper = styled.div`
-    width: 1042px;
+    max-width: 1042px;
     margin: 2rem auto;
     
     h4 {

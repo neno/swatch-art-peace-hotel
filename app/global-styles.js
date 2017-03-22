@@ -64,7 +64,8 @@ injectGlobal`
     color: #000000;
   }
   
-  button {
+  button,
+  button:active {
     cursor: pointer;
     outline: none;
   }
@@ -124,6 +125,10 @@ injectGlobal`
     left: 0 !important;
     border: none !important;
     background-color: transparent !important;
+  }
+  
+  .ReactModal__Body--open .ReactModal__Overlay .ReactModal__Content button {
+    right: 24px;
   }
   
 `;

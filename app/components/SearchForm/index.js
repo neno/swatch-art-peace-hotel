@@ -15,7 +15,7 @@ function SearchForm() {
     position: relative;
     margin: 0 auto;
     padding: 2rem 0;
-    width: 680px;
+    max-width: 680px;
   `;
 
   const Submit = styled.button`

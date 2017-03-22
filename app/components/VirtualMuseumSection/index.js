@@ -18,7 +18,7 @@ import Image from '../Image';
 function VirtualMuseumSection() {
   const Left = styled.div`
     margin-bottom: 20px;
-  
+    min-width: calc(50% - 10px);
     img {
       width: 100%;
     }
@@ -30,6 +30,7 @@ function VirtualMuseumSection() {
   `;
 
   const Right = styled.div`
+    min-width: calc(50% - 10px);
     img {
       width: 100%;
     }

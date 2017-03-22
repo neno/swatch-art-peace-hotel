@@ -35,7 +35,7 @@ export default {
   },
   Gallery: {
     itemsPerRow: {
-      phoneOnly: 1,
+      phoneOnly: 2,
       tabletPortraitUp: 2,
       tabletLandscapeUp: 4,
       desktopUp: 4,

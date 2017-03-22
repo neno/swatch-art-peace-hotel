@@ -18,6 +18,9 @@ function Thumb({ imageUrl, setImage }) {
     margin: 16px 16px 0 0;
     background: url(${config.imgDir}/${imageUrl}) center;
     background-size: cover;
+    
+    transition: all .2s ease-in-out;
+    &:hover { transform: scale(1.2); }
   `;
 
   return (

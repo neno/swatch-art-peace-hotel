@@ -24,6 +24,7 @@ function GalleryItem({ idx, itemsPerRow, artworksLength, item, thumb, handleExpa
     position: relative;
     width: ${itemWidth};
     height: ${itemHeight};
+    overflow: hidden;
     margin: 0;
     ${idx >= itemsPerRow ? 'margin-top: 10px;' : ''}
     ${idx <= lastRowStart ? 'margin-bottom: 10px;' : ''}
@@ -61,8 +62,8 @@ function GalleryItem({ idx, itemsPerRow, artworksLength, item, thumb, handleExpa
     
     img {
       object-fit: cover;
-      height: 100%;
-      width: 100%;
+      min-height: 100%;
+      min-width: 100%;
     }
   `;
 

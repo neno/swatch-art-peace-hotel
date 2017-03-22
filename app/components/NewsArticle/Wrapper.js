@@ -5,6 +5,7 @@ const Wrapper = styled.article`
   
   &:hover h3,
   &:hover p {
+    cursor: pointer;
     color: #7C5E3C;
   }
   

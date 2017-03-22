@@ -12,6 +12,7 @@ const SearchInput = styled.input`
   text-align: center;
   background: transparent;
   appearance: none;
+  outline: none;
 `;
 
 export default SearchInput;

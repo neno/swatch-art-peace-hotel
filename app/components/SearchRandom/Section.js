@@ -1,13 +1,18 @@
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 import Image from '../Image';
+import { media } from '../../style-utils';
 
 const Section = ({ title, image }) => {
   const Wrapper = styled.section`
-    width: 25%;
+    width: 100%;
     flex-grow: 0;
     flex-shrink: 0;
     padding: 1rem .5rem;
+    
+    ${media.tablet`
+      width: 25%;
+    `}
     
     img {
       display: inline-block;

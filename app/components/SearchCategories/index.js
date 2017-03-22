@@ -11,17 +11,27 @@ import _ from 'lodash';
 import FlexBox from '../FlexBox';
 import Section from './Section';
 import H4 from '../H4';
+import { media } from '../../style-utils';
 
 const SearchCategories = ({ searchCategories }) => {
   const Wrapper = styled.div`
-    width: 1042px;
+    max-width: 1042px;
     margin: 2rem auto;
-    
     
     h4 {
       font-size: 18px;
       font-weight: normal;
     }
+    
+    section {
+      padding: .5rem 0;
+    }
+    
+    ${media.tablet`
+      section {
+        padding: 0;
+      }
+    `}
     
   `;
   const Centered = styled.div`
