@@ -14,9 +14,6 @@ const Wrapper = styled.header`
   width: 100%;
   background: #fafafa;
   
-  max-width: 1440px;
-  margin: 0 auto;
-  
   ${media.tabletLandscape`
     padding-left: 130px;
     padding-right: 130px;
