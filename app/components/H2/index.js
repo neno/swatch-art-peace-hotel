@@ -8,6 +8,7 @@ const H2 = styled.h2`
   text-transform: uppercase;
   line-height: 1.3;
   color: #000000;
+  
 `;
 
 export default H2;

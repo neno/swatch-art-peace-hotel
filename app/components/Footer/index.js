@@ -14,7 +14,11 @@ import { media } from '../../style-utils';
 function Footer() {
   const FooterWrapper = styled.footer`
     width: 100%;
-    margin-top: 90px;
+    margin-top: 30px;
+    
+    ${media.tablet`
+      margin-top: 90px;
+    `}
   `;
 
   const Wrapper = styled.div`

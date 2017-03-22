@@ -23,14 +23,16 @@ function Footer() {
 
   const ListItem = styled.li`
      display: block;
-     
+     margin: 1rem 0;
      
   
      ${media.tablet`
        display: inline-block;
-     
+       margin: 0;
        & + & { margin-left: 25px; }
     `}
+    
+    
   `;
 
   const FooterLink = styled(Link)`

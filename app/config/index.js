@@ -27,11 +27,11 @@ export default {
       description: '',
       children: {
         Discover: {
-          title: 'Discover',
+          title: 'Discover out art works',
           description: '',
         },
         MeetArtists: {
-          title: 'Meet Artists',
+          title: 'Meet our artists',
           description: '',
         },
       },

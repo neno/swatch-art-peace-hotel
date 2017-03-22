@@ -6,7 +6,7 @@ const Article = styled.article`
   display: table;
   width: 100%;
   
-  height: 300px;
+  height: 260px;
   
   ${media.tablet`
     height: 384px;

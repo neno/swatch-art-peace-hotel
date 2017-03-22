@@ -9,13 +9,14 @@ const Wrapper = styled.header`
   align-items: center;
   justify-content: center;
   padding: 18px 60px 14px;
-  z-index: 9000;
+  z-index: 9050;
   height: 80px;
   width: 100%;
-  background: white;
+  background: #fafafa;
   
   max-width: 1440px;
   margin: 0 auto;
+  border-bottom: 1px solid #7C5E3C;
   
   ${media.tabletLandscape`
     padding-left: 130px;

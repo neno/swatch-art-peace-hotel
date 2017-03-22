@@ -11,7 +11,7 @@ const Button = styled.button`
   padding: 13px 0;
   outline: 0;
   appearance: none;
-  background-color: white;
+  background-color: #fafafa;
   border-radius: 50px;
   transition: background-color .4s ease;
   

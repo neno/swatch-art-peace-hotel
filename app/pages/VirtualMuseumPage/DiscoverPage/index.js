@@ -12,6 +12,7 @@ import Gallery from '../../../components/Gallery';
 import ScrollToTop from '../../../components/ScrollToTop';
 import ApplyNow from '../../../components/ApplyNow';
 import Constrained from '../../../components/Constrained';
+import H1 from '../../../components/H1';
 import config from '../../../config';
 
 export class DiscoverPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -20,6 +21,7 @@ export class DiscoverPage extends React.PureComponent { // eslint-disable-line r
     return (
       <div>
         <PageTitle title={title} description={description} />
+        <H1>{title}</H1>
         <GalleryContainer context="artwork">
           <Gallery />
         </GalleryContainer>

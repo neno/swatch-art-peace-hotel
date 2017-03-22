@@ -28,7 +28,7 @@ function GalleryItem({ idx, itemsPerRow, artworksLength, item, thumb, handleExpa
     margin: 0;
     ${idx >= itemsPerRow ? 'margin-top: 10px;' : ''}
     ${idx <= lastRowStart ? 'margin-bottom: 10px;' : ''}
-    background: #fff;
+    background: #fafafa;
     cursor: pointer;
     
     transition: all .4s ease;

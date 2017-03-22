@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-content: flex-start;
-    padding: 12px 0 137px;
+    padding: 12px 0;
     
      &:before {
       content: '';
@@ -22,6 +22,12 @@ const Wrapper = styled.div`
       transform: translateX(-50);
     }
   `}
+  
+  ${media.tabletLandscape`
+    padding: 12px 0 137px;
+  `}
+  
+  
 `;
 
 export default Wrapper;
