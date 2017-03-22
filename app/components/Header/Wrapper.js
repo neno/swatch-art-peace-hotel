@@ -4,7 +4,7 @@ import { media } from '../../style-utils';
 const Wrapper = styled.header`
   position: fixed;
   top: 0;
-  left: 0;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +13,9 @@ const Wrapper = styled.header`
   height: 80px;
   width: 100%;
   background: white;
+  
+  max-width: 1440px;
+  margin: 0 auto;
   
   ${media.tabletLandscape`
     padding-left: 130px;

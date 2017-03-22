@@ -18,6 +18,10 @@ export default {
       title: 'Welcome',
       description: '',
     },
+    Impressum: {
+      title: 'Impressum',
+      description: '',
+    },
     VirtualMuseum: {
       title: 'Virtual Museum',
       description: '',
@@ -51,4 +55,18 @@ export default {
     defaultImage: 'http://totallyhistory.com/wp-content/uploads/2011/11/Van_Gogh_-_Starry_Night.jpg',
   },
   imgDir: 'img',
+  Impressum: [
+    {
+      text: '© Julia Curty, SUPERSCRIPT GmbH, www.superscript.ch',
+      url: 'http://www.superscript.ch',
+    },
+    {
+      text: '© Anton Hofmann, codingroom GmbH, www.codingroom.ch',
+      url: 'http://www.codingroom.ch',
+    },
+    {
+      text: '© Nenad Brcic, neno web GmbH, neno.ch',
+      url: 'http://neno.ch',
+    },
+  ],
 };

@@ -45,7 +45,7 @@ function Footer() {
   return (
     <Ul>
       <ListItem>
-        <FooterLink to={'/'}>
+        <FooterLink to={'/impressum'}>
           Impressum
         </FooterLink>
       </ListItem>

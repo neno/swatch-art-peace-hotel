@@ -97,6 +97,14 @@ export default function createRoutes(store) {
       },
     },
     {
+      path: '/impressum',
+      name: 'impressumPage',
+      getComponent(location, cb) {
+        import('pages/ImpressumPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
