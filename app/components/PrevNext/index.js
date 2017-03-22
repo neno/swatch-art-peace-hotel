@@ -6,6 +6,7 @@
 
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
+import { media } from '../../style-utils';
 import arrowPrev from '../../img/arrow-prev.svg';
 import arrowNext from '../../img/arrow-next.svg';
 
@@ -19,6 +20,7 @@ const isPrev = (skin) => skin === skins.prev;
 
 const PrevNext = ({ skin, handleClick }) => {
   const Button = styled.button`
+    display: none;
     z-index: 100;
     position: absolute;
     bottom: 0;
@@ -32,6 +34,10 @@ const PrevNext = ({ skin, handleClick }) => {
     &:hover {
       color: #C6C6C6;
     }
+    
+    ${media.tabletLandscape`
+      display: block;
+    `}
   `;
 
   return (

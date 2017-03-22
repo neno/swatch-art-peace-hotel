@@ -6,8 +6,8 @@ const Button = styled.button`
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -55px;
+  right: -5px;
   padding: 13px 0;
   outline: 0;
   appearance: none;

@@ -12,12 +12,14 @@ import { media } from '../../style-utils';
 function Actions() {
   const Wrapper = styled.div`
     position: absolute;
-    right: 0;
+    left: -20px;
     top: -61px;
     font-size: 0;
     
-     ${media.tabletLandscape`
-       top: -41px;
+    ${media.tabletLandscape`
+      left: auto;
+      right: 0;
+      top: -41px;
     `}
   `;
 
@@ -37,7 +39,7 @@ function Actions() {
       margin-left: 0;
     }
     
-    ${media.tabletLandscape`
+    ${media.tablet`
        min-width: 160px;
     `}
    `;
