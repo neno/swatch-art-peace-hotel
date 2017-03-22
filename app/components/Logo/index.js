@@ -13,7 +13,7 @@ import logoImage from '../../img/logo.svg';
 const Logo = () => {
   const Wrapper = styled(Link)`
     display: inline-block;
-    max-width: 180px;
+    max-width: 200px;
     font-size: 0;
     
     ${media.tablet`
