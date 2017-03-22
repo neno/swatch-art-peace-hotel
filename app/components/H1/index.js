@@ -10,6 +10,7 @@ const H1 = styled.h1`
   text-transform: uppercase;
   line-height: 1.3;
   color: #000000;
+  border-top: 1px solid #7C5E3C;
 `;
 
 export default H1;
