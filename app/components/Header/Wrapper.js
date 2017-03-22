@@ -12,7 +12,7 @@ const Wrapper = styled.header`
   z-index: 9000;
   height: 80px;
   width: 100%;
-  background: transparent;
+  background: white;
   
   ${media.tabletLandscape`
     padding-left: 130px;
