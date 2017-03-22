@@ -8,10 +8,11 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
 import arrowDown from '../../img/arrow-down.svg';
+import { media } from '../../style-utils';
 
 const ScrollTo = ({ direction, to, offset, smooth }) => {
   const Wrapper = styled(Link)`
-    display: flex;
+    display: none;
     margin: auto;
     width: 60px;
     height: 60px;
@@ -27,6 +28,10 @@ const ScrollTo = ({ direction, to, offset, smooth }) => {
     &:active {
       background: rgba(0,0,0, 1);
     } 
+    
+    ${media.tablet`
+      display: flex;
+    `}
   `;
 
   return (

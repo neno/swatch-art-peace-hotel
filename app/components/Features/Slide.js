@@ -5,7 +5,21 @@ const Article = styled.article`
   position: relative;
   display: table;
   width: 100%;
-  height: calc(100vh - 80px);
+  
+  height: 300px;
+  
+  ${media.tablet`
+    height: 384px;
+  `}
+  
+  ${media.tabletLandscape`
+    height: 512px;
+  `}
+  
+  ${media.desktop`
+    height: 750px;
+  `}
+  
   overflow: hidden;
   
   background-size: cover;
