@@ -8,6 +8,14 @@ const Ul = styled.ul`
   & > li {
     margin: .5rem 0;
   }
+  
+  a {
+    transition: color: .4s ease;
+    &:hover {
+      color: #7c5e3c;
+    }
+  }
+  
 `;
 
 export default Ul;
