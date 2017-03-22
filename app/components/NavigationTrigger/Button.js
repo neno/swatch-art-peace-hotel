@@ -4,7 +4,7 @@ import { media } from '../../style-utils';
 const Button = styled.button`
   position: absolute;
   top: 22px
-  left: 24px;
+  left: 5px;
   padding: 0;
   display: flex;
   padding: 0;
@@ -22,7 +22,7 @@ const Button = styled.button`
     justify-content: center;
     width: 40px;
     height: 40px;
-    
+    padding: 10px;
   }
   
   img {
@@ -32,8 +32,12 @@ const Button = styled.button`
   
   ${media.tabletLandscape`
     font-size: 14px;
+    left: 24px;
   
-    i { margin-right: 12px; }
+    i { 
+      margin-right: 12px;
+      padding: 0;
+    }
   `}
 `;
 

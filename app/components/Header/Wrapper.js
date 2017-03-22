@@ -8,7 +8,7 @@ const Wrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px 90px 14px;
+  padding: 18px 60px 14px;
   z-index: 9000;
   height: 80px;
   width: 100%;
