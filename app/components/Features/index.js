@@ -16,10 +16,10 @@ import config from '../../config';
 
 function Features({ features }) {
   const settings = {
-    infinite: true,
-    speed: 750,
     autoplay: true,
     autoplaySpeed: 5000,
+    infinite: true,
+    speed: 750,
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: true,

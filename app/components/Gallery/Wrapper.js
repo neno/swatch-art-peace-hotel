@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   flex-flow: row wrap;
   justify-content: flex-start;
   align-content: flex-start;
-  background: #999;
+  background: white;
   margin-bottom: 80px;
 `;
 

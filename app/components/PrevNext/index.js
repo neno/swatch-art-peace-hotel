@@ -27,6 +27,11 @@ const PrevNext = ({ skin, handleClick }) => {
     padding: 0;
     outline: 0;
     appearance: none;
+    transition: color .4s ease;
+    
+    &:hover {
+      color: #C6C6C6;
+    }
   `;
 
   return (

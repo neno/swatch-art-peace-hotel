@@ -24,7 +24,7 @@ function Footer() {
   const ListItem = styled.li`
      display: block;
      
-     & + & { margin-top: 10px; }
+     
   
      ${media.tablet`
        display: inline-block;
@@ -44,6 +44,11 @@ function Footer() {
 
   return (
     <Ul>
+      <ListItem>
+        <FooterLink to={'/'}>
+          Impressum
+        </FooterLink>
+      </ListItem>
       <ListItem>
         <FooterLink to={'/'}>
           Terms Of Use

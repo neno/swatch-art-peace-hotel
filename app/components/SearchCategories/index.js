@@ -16,6 +16,13 @@ const SearchCategories = ({ searchCategories }) => {
   const Wrapper = styled.div`
     width: 1042px;
     margin: 2rem auto;
+    
+    
+    h4 {
+      font-size: 18px;
+      font-weight: normal;
+    }
+    
   `;
   const Centered = styled.div`
     text-align: center;

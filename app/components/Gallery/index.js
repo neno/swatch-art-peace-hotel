@@ -10,9 +10,13 @@ import _ from 'lodash';
 import GalleryItem from '../GalleryItem';
 import GalleryDetail from '../GalleryDetail';
 import Wrapper from './Wrapper';
+import Mask from './Mask';
 
 const Gallery = ({ artworksLength, itemsPerRow, items, context, handleExpand, handleCollapse, itemWidth, itemHeight, expandedId, prevId, nextId }) => (
   <Wrapper>
+    {
+      expandedId && <Mask />
+    }
     {
       !_.isEmpty(items) &&
       items.map((item, idx) => (
@@ -36,6 +40,7 @@ const Gallery = ({ artworksLength, itemsPerRow, items, context, handleExpand, ha
             itemWidth={itemWidth}
             itemHeight={itemHeight}
             handleExpand={expandedId === item.id ? handleCollapse : handleExpand}
+            doMask={!!expandedId}
           />
         )
       ))

@@ -113,7 +113,7 @@ injectGlobal`
   
   .ReactModal__Body--open .ReactModal__Overlay {
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.9) !important;
+    background-color: rgba(242,242,242,.89) !important;
     top: 80px !important;
   }
   

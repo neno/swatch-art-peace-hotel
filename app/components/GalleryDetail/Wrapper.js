@@ -10,8 +10,8 @@ const Wrapper = styled.div`
   // margin-top: -10px;
   // margin-bottom: -10px;
   background: white;
-  border-top: 10px solid #999;
-  border-bottom: 10px solid #999;
+  border-top: 10px solid rgba(0, 0, 0, .5);
+  border-bottom: 10px solid rgba(0, 0, 0, .5);
   
   ${media.tabletLandscape`
      padding: 40px;

@@ -67,7 +67,7 @@ export class GalleryDetail extends PureComponent {
   render() {
     const { item, handleCollapse, prevId, nextId } = this.props;
     return (
-      <Wrapper>
+      <Wrapper name="galleryDetail">
         <Inner>
           <Close handleClose={handleCollapse} />
           <PrevNext skin={skins.prev} handleClick={() => this.goTo(prevId)} />

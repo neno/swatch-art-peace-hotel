@@ -13,11 +13,11 @@ function Actions() {
   const Wrapper = styled.div`
     position: absolute;
     right: 0;
-    top: -60px;
+    top: -61px;
     font-size: 0;
     
      ${media.tabletLandscape`
-       top: -40px;
+       top: -41px;
     `}
   `;
 

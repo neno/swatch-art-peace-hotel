@@ -13,6 +13,12 @@ const Button = styled.button`
   text-align: center;
   text-transform: lowercase
   color: #7c5e3c;
+  transition: all .4s ease;
+  &:hover {
+    background-color: #7C5E3C;
+    border-color: #7C5E3C;
+    color: white;
+  }
 `;
 
 export default Button;
