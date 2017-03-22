@@ -20,10 +20,15 @@ const SearchTrigger = ({ toggleSearch, isSearchOpen }) => {
     text-align: center;
   `;
 
+  const Image = styled.img`
+    transition: all .2s ease-in-out;
+    &:hover { transform: scale(1.2); }
+  `;
+
   const trigger = (
     <Button>
       <i>
-        <img src={isSearchOpen ? close : search} alt="Close icon" />
+        <Image src={isSearchOpen ? close : search} alt="Close icon" />
       </i>
     </Button>
   );
