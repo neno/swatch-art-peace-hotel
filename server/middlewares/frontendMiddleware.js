@@ -3,6 +3,26 @@ const express = require('express');
 const path = require('path');
 const compression = require('compression');
 const pkg = require(path.resolve(process.cwd(), 'package.json'));
+const basicAuth = require('basic-auth');
+
+const auth = (req, res, next) => {
+  const unauthorized = () => {
+    res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
+    return res.send(401);
+  };
+
+  const user = basicAuth(req);
+
+  if (!user || !user.name || !user.pass) {
+    return unauthorized();
+  }
+
+  if (user.name === 'swatchgroup' && user.pass === 'preview') {
+    return next();
+  }
+
+  return unauthorized();
+};
 
 // Dev middleware
 const addDevMiddlewares = (app, webpackConfig) => {
@@ -31,7 +51,7 @@ const addDevMiddlewares = (app, webpackConfig) => {
     });
   }
 
-  app.get('*', (req, res) => {
+  app.get('*', auth, (req, res) => {
     fs.readFile(path.join(compiler.outputPath, 'index.html'), (err, file) => {
       if (err) {
         res.sendStatus(404);
